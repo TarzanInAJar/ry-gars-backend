@@ -1,5 +1,6 @@
 package com.mytechuncle.rygarsbackend.dto.cigar;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class TobaccoDTO {
@@ -19,19 +20,19 @@ public class TobaccoDTO {
 
     public TobaccoDTO(String region, String type) {
         this.region = region;
-        this.type = Optional.of(type);
+        this.type = Optional.ofNullable(type);
     }
 
     public TobaccoDTO(String region, Integer year) {
         this.region = region;
         this.type = Optional.empty();
-        this.year = Optional.of(year);
+        this.year = Optional.ofNullable(year);
     }
 
     public TobaccoDTO(String region, String type, Integer year) {
         this.region = region;
-        this.type = Optional.of(type);
-        this.year = Optional.of(year);
+        this.type = Optional.ofNullable(type);
+        this.year = Optional.ofNullable(year);
     }
 
     public String getRegion() {
@@ -56,5 +57,20 @@ public class TobaccoDTO {
 
     public void setYear(Optional<Integer> year) {
         this.year = year;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TobaccoDTO that = (TobaccoDTO) o;
+        return Objects.equals(region, that.region) &&
+                Objects.equals(type, that.type) &&
+                Objects.equals(year, that.year);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(region, type, year);
     }
 }

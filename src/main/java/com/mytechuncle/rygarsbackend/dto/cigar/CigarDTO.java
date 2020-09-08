@@ -1,6 +1,7 @@
 package com.mytechuncle.rygarsbackend.dto.cigar;
 
 import java.util.List;
+import java.util.Objects;
 
 public class CigarDTO {
     private String id;
@@ -101,5 +102,27 @@ public class CigarDTO {
 
     public void setStrength(String strength) {
         this.strength = strength;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CigarDTO cigarDTO = (CigarDTO) o;
+        return Objects.equals(brand, cigarDTO.brand) &&
+                Objects.equals(subBrand, cigarDTO.subBrand) &&
+                Objects.equals(name, cigarDTO.name) &&
+                Objects.equals(sizeName, cigarDTO.sizeName) &&
+                Objects.equals(ringGauge, cigarDTO.ringGauge) &&
+                Objects.equals(length, cigarDTO.length) &&
+                Objects.equals(wrapper, cigarDTO.wrapper) &&
+                Objects.equals(binder, cigarDTO.binder) &&
+                Objects.equals(filler, cigarDTO.filler) &&
+                Objects.equals(strength, cigarDTO.strength);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, subBrand, name, sizeName, ringGauge, length, wrapper, binder, filler, strength);
     }
 }
