@@ -38,10 +38,27 @@ public class CigarDAO {
                 .collect(toList());
     }
 
+    public CigarDTO getCigar(String brand, String subBrand, String name, String sizeName) {
+        Optional<Cigar> cigar = cigarRepository.findOne(brand, subBrand, name, sizeName);
+        if (cigar.isPresent()) {
+            return getDTO(cigar.get());
+        }
+        return null;
+    }
+
+    public boolean exists(String id) {
+        return cigarRepository.existsById(id);
+    }
+
+    public boolean exists(String brand, String subBrand, String name, String sizeName) {
+        return cigarRepository.exists(brand, subBrand, name, sizeName);
+    }
+
     private CigarDTO getDTO(Cigar cigar) {
         CigarDTO dto = new CigarDTO();
         dto.setBrand(cigar.getBrand());
         dto.setSubBrand(cigar.getSubBrand());
+        dto.setName(cigar.getName());
         dto.setSizeName(cigar.getSizeName());
         dto.setBinder(getDTO(cigar.getBinder()));
         dto.setWrapper(getDTO(cigar.getWrapper()));

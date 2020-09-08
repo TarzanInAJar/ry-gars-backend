@@ -26,5 +26,23 @@ public class CigarServiceImpl implements CigarService {
         return dao.getCigarsByBrand(brand);
     }
 
+    @Override
+    public boolean exists(String brand, String subBrand, String name, String sizeName) {
+        return dao.exists(brand, subBrand, name, sizeName);
+    }
 
+    @Override
+    public CigarDTO getCigar(String brand, String subBrand, String name, String sizeName) {
+        return dao.getCigar(brand, subBrand, name, sizeName);
+    }
+
+    @Override
+    public void updateCigar(CigarDTO cigar) {
+        if (cigar.getId() == null) {
+            throw new IllegalArgumentException("Update cigar request must have an id!");
+        } else if (!dao.exists(cigar.getId())) {
+            throw new IllegalArgumentException("Can't update - no cigar exists for id " + cigar.getId());
+        }
+        dao.save(cigar);
+    }
 }
