@@ -1,5 +1,6 @@
 package com.mytechuncle.rygarsbackend.dto.cigar;
 
+import java.net.URL;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,6 +16,7 @@ public class CigarDTO {
     private TobaccoDTO binder;
     private List<TobaccoDTO> filler;
     private String strength;
+    private List<URL> messages;
 
     public String getId() {
         return id;
@@ -104,6 +106,14 @@ public class CigarDTO {
         this.strength = strength;
     }
 
+    public List<URL> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<URL> messages) {
+        this.messages = messages;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -118,11 +128,12 @@ public class CigarDTO {
                 Objects.equals(wrapper, cigarDTO.wrapper) &&
                 Objects.equals(binder, cigarDTO.binder) &&
                 Objects.equals(filler, cigarDTO.filler) &&
-                Objects.equals(strength, cigarDTO.strength);
+                Objects.equals(strength, cigarDTO.strength) &&
+                Objects.equals(messages, cigarDTO.messages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand, subBrand, name, sizeName, ringGauge, length, wrapper, binder, filler, strength);
+        return Objects.hash(brand, subBrand, name, sizeName, ringGauge, length, wrapper, binder, filler, strength, messages);
     }
 }

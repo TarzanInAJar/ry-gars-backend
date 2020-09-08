@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.net.URL;
 import java.util.List;
 
 @Document
@@ -32,6 +33,7 @@ public class Cigar {
     private List<Tobacco> filler;
     @NonNull
     private STRENGTH strength;
+    private List<URL> images;
 
     public String getId() {
         return id;
@@ -119,5 +121,13 @@ public class Cigar {
 
     public void setStrength(STRENGTH strength) {
         this.strength = strength;
+    }
+
+    public List<URL> getImages() {
+        return images;
+    }
+
+    public void setImages(List<URL> images) {
+        this.images = images;
     }
 }
