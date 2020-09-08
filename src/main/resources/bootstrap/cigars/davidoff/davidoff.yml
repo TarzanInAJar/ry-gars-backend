@@ -1,0 +1,15 @@
+-
+  brand: 'Davidoff'
+  name: 'Anniversario'
+  sizeName: 'No. 2'
+  ringGauge: 50
+  length: 5.25
+  wrapper:
+    region: 'Dominican Republic'
+    shade: 'EMS'
+  binder:
+    region: 'Dominican Republic'
+  filler:
+    -
+      region: 'Dominican Republic'
+  strength: 'Medium'

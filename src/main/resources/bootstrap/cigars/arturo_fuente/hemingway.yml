@@ -1,0 +1,48 @@
+-
+  brand: 'Arturo Fuente'
+  subBrand: 'Fuente Fuente'
+  name: 'Opus X The Lost City'
+  sizeName: 'Robusto'
+  ringGauge: 50
+  length: 5.25
+  wrapper:
+    region: 'Dominican Republic'
+    shade: 'Sungrown'
+  binder:
+    region: 'Dominican Republic'
+  filler:
+    -
+      region: 'Dominican Republic'
+  strength: 'Medium'
+-
+  brand: 'Arturo Fuente'
+  subBrand: 'Gran Reserva'
+  name: 'Hemingway Signature'
+  sizeName: 'Figurado'
+  ringGauge: 47
+  length: 6
+  wrapper:
+    region: 'African'
+    shade: 'Cameroon'
+  binder:
+    region: 'Dominican Republic'
+  filler:
+    -
+      region: 'Dominican Republic'
+  strength: 'Medium'
+-
+  brand: 'Arturo Fuente'
+  subBrand: 'Gran Reserva'
+  name: 'Hemingway Short Story'
+  sizeName: 'Perfecto'
+  ringGauge: 48
+  length: 4
+  wrapper:
+    region: 'African'
+    shade: 'Cameroon'
+  binder:
+    region: 'Dominican Republic'
+  filler:
+    -
+      region: 'Dominican Republic'
+  strength: 'Medium'
