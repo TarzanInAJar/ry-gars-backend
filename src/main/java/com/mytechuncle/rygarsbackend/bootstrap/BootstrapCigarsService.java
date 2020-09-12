@@ -1,6 +1,7 @@
 package com.mytechuncle.rygarsbackend.bootstrap;
 
 import com.mytechuncle.rygarsbackend.dto.cigar.CigarDTO;
+import com.mytechuncle.rygarsbackend.dto.cigar.CigarSizeDTO;
 import com.mytechuncle.rygarsbackend.dto.cigar.TobaccoDTO;
 import com.mytechuncle.rygarsbackend.dto.cigar.WrapperDTO;
 import com.mytechuncle.rygarsbackend.services.CigarService;
@@ -15,11 +16,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
-import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 
 @Service
@@ -78,7 +75,7 @@ public class BootstrapCigarsService {
      */
     private BootstrapResult bootstrapCigar(BootstrapCigar cigar) throws IllegalArgumentException {
         CigarDTO bootstrapDTO = getDTO(cigar);
-        CigarDTO dto = cigarService.getCigar(cigar.getBrand(), cigar.getSubBrand(), cigar.getName(), cigar.getSizeName());
+        CigarDTO dto = cigarService.getCigar(cigar.getBrand(), cigar.getSubBrand(), cigar.getName());
         if (dto == null) {
             cigarService.addCigar(bootstrapDTO);
             return BootstrapResult.created;
@@ -98,26 +95,43 @@ public class BootstrapCigarsService {
         CigarDTO dto = new CigarDTO();
         dto.setStrength(cigar.getStrength());
         dto.setBrand(cigar.getBrand());
-        dto.setLength(cigar.getLength());
         dto.setName(cigar.getName());
-        dto.setRingGauge(cigar.getRingGauge());
-        dto.setSizeName(cigar.getSizeName());
         dto.setSubBrand(cigar.getSubBrand());
+        dto.setImages(cigar.getImages());
 
         dto.setBinder(new TobaccoDTO(
-                cigar.getWrapper().get("region"),
-                cigar.getWrapper().get("type"),
-                cigar.getWrapper().get("year") != null ? Integer.valueOf(cigar.getWrapper().get("year")) : null));
-
-        dto.setWrapper(new WrapperDTO(
-                cigar.getWrapper().get("region"),
-                cigar.getWrapper().get("shade")));
+                cigar.getBinder().getRegion(),
+                cigar.getBinder().getType(),
+                cigar.getBinder().getYear()));
 
         dto.setFiller(cigar.getFiller().stream()
                 .map(filler -> new TobaccoDTO(
-                        cigar.getWrapper().get("region"),
-                        cigar.getWrapper().get("type"),
-                        cigar.getWrapper().get("year") != null ? Integer.valueOf(cigar.getWrapper().get("year")) : null))
+                        filler.getRegion(),
+                        filler.getType(),
+                        filler.getYear()
+                ))
+                .collect(toList()));
+
+        dto.setSizes(cigar.getSizes().stream()
+                .map(size -> {
+                    CigarSizeDTO sizeDTO = new CigarSizeDTO();
+                    sizeDTO.setSizeName(size.getSizeName());
+                    sizeDTO.setAlternativeSizeName(size.getAlternativeSizeName());
+                    sizeDTO.setLength(size.getLength());
+                    sizeDTO.setRingGauge(size.getRingGauge());
+                    sizeDTO.setRingGauge2(size.getRingGauge2());
+                    sizeDTO.setImages(size.getImages());
+                    sizeDTO.setWrappers(size.getWrappers().stream()
+                            .map(wrapper -> {
+                                WrapperDTO wrapperDTO = new WrapperDTO();
+                                wrapperDTO.setShade(wrapper.getShade());
+                                wrapperDTO.setRegion(wrapper.getRegion());
+                                wrapperDTO.setName(wrapper.getName());
+                                return wrapperDTO;
+                            })
+                            .collect(toList()));
+                    return sizeDTO;
+                })
                 .collect(toList()));
         return dto;
     }

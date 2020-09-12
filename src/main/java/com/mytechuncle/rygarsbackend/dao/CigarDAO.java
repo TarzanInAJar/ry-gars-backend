@@ -1,21 +1,19 @@
 package com.mytechuncle.rygarsbackend.dao;
 
-import com.mytechuncle.rygarsbackend.documents.cigar.Cigar;
-import com.mytechuncle.rygarsbackend.documents.cigar.STRENGTH;
-import com.mytechuncle.rygarsbackend.documents.cigar.Tobacco;
-import com.mytechuncle.rygarsbackend.documents.cigar.Wrapper;
+import com.mytechuncle.rygarsbackend.documents.cigar.*;
 import com.mytechuncle.rygarsbackend.dto.cigar.CigarDTO;
+import com.mytechuncle.rygarsbackend.dto.cigar.CigarSizeDTO;
 import com.mytechuncle.rygarsbackend.dto.cigar.TobaccoDTO;
 import com.mytechuncle.rygarsbackend.dto.cigar.WrapperDTO;
 import com.mytechuncle.rygarsbackend.repositories.CigarRepository;
 import org.apache.commons.text.WordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
-import static java.util.Optional.empty;
 import static java.util.stream.Collectors.toList;
 
 @Service
@@ -30,16 +28,14 @@ public class CigarDAO {
         return entity.getId();
     }
 
-    public List<CigarDTO> getCigarsByBrand(String brand) {
+    public Page<CigarDTO> getCigarsByBrand(Pageable pageable, String brand) {
         return cigarRepository
-                .findAllByBrand(brand)
-                .stream()
-                .map(this::getDTO)
-                .collect(toList());
+                .findAllByBrand(pageable, brand)
+                .map(this::getDTO);
     }
 
-    public CigarDTO getCigar(String brand, String subBrand, String name, String sizeName) {
-        Optional<Cigar> cigar = cigarRepository.findOne(brand, subBrand, name, sizeName);
+    public CigarDTO getCigar(String brand, String subBrand, String name) {
+        Optional<Cigar> cigar = cigarRepository.findOne(brand, subBrand, name);
         if (cigar.isPresent()) {
             return getDTO(cigar.get());
         }
@@ -50,8 +46,8 @@ public class CigarDAO {
         return cigarRepository.existsById(id);
     }
 
-    public boolean exists(String brand, String subBrand, String name, String sizeName) {
-        return cigarRepository.exists(brand, subBrand, name, sizeName);
+    public boolean exists(String brand, String subBrand, String name) {
+        return cigarRepository.exists(brand, subBrand, name);
     }
 
     private CigarDTO getDTO(Cigar cigar) {
@@ -59,14 +55,23 @@ public class CigarDAO {
         dto.setBrand(cigar.getBrand());
         dto.setSubBrand(cigar.getSubBrand());
         dto.setName(cigar.getName());
-        dto.setSizeName(cigar.getSizeName());
         dto.setBinder(getDTO(cigar.getBinder()));
-        dto.setWrapper(getDTO(cigar.getWrapper()));
         dto.setFiller(cigar.getFiller().stream().map(this::getDTO).collect(toList()));
-        dto.setLength(cigar.getLength());
-        dto.setRingGauge(cigar.getRingGauge());
         dto.setId(cigar.getId());
         dto.setStrength(cigar.getStrength() != null ? WordUtils.capitalizeFully(cigar.getStrength().name()) : null);
+        dto.setSizes(cigar.getSizes().stream().map(this::getDTO).collect(toList()));
+        dto.setImages(cigar.getImages());
+        return dto;
+    }
+
+    private CigarSizeDTO getDTO(CigarSize cigarSize) {
+        CigarSizeDTO dto = new CigarSizeDTO();
+        dto.setSizeName(cigarSize.getSizeName());
+        dto.setLength(cigarSize.getLength());
+        dto.setRingGauge(cigarSize.getRingGauge());
+        dto.setRingGauge2(cigarSize.getRingGauge2());
+        dto.setAlternativeSizeName(cigarSize.getAlternativeSizeName());
+        dto.setWrappers(cigarSize.getWrappers().stream().map(this::getDTO).collect(toList()));
         return dto;
     }
 
@@ -74,14 +79,15 @@ public class CigarDAO {
         WrapperDTO dto = new WrapperDTO();
         dto.setRegion(wrapper.getRegion());
         dto.setShade(wrapper.getShade());
+        dto.setName(wrapper.getName());
         return dto;
     }
 
     private TobaccoDTO getDTO(Tobacco tobacco) {
         TobaccoDTO tobaccoDTO = new TobaccoDTO();
         tobaccoDTO.setRegion(tobacco.getRegion());
-        tobaccoDTO.setType(tobacco.getType() != null ? Optional.of(tobacco.getType()) : empty());
-        tobaccoDTO.setYear(tobacco.getYear() != null ? Optional.of(tobacco.getYear()) : empty());
+        tobaccoDTO.setType(tobacco.getType());
+        tobaccoDTO.setYear(tobacco.getYear());
         return tobaccoDTO;
     }
 
@@ -92,16 +98,27 @@ public class CigarDAO {
         } else {
             entity = new Cigar();
         }
-        entity.setWrapper(getEntity(cigar.getWrapper()));
         entity.setBinder(getEntity(cigar.getBinder()));
         entity.setFiller(cigar.getFiller().stream().map(this::getEntity).collect(toList()));
-        entity.setLength(cigar.getLength());
-        entity.setRingGauge(cigar.getRingGauge());
-        entity.setSizeName(cigar.getSizeName());
         entity.setName(cigar.getName());
         entity.setBrand(cigar.getBrand());
         entity.setSubBrand(cigar.getSubBrand());
         entity.setStrength(STRENGTH.valueOf(cigar.getStrength().toUpperCase()));
+        entity.setSizes(cigar.getSizes().stream().map(this::getEntity).collect(toList()));
+        entity.setImages(cigar.getImages());
+        return entity;
+    }
+
+    private CigarSize getEntity(CigarSizeDTO size) {
+        CigarSize entity = new CigarSize();
+        entity.setSizeName(size.getSizeName());
+        entity.setAlternativeSizeName(size.getAlternativeSizeName());
+        entity.setLength(size.getLength());
+        entity.setRingGauge(size.getRingGauge());
+        entity.setRingGauge2(size.getRingGauge2());
+        entity.setImages(size.getImages());
+        entity.setWrappers(size.getWrappers().stream().map(this::getEntity).collect(toList()));
+        entity.setImages(size.getImages());
         return entity;
     }
 
@@ -109,14 +126,15 @@ public class CigarDAO {
         Wrapper entity = new Wrapper();
         entity.setRegion(wrapper.getRegion());
         entity.setShade(wrapper.getShade());
+        entity.setName(wrapper.getName());
         return entity;
     }
 
     private Tobacco getEntity(TobaccoDTO tobacco) {
         Tobacco entity = new Tobacco();
         entity.setRegion(tobacco.getRegion());
-        entity.setType(tobacco.getType().orElse(null));
-        entity.setYear(tobacco.getYear().orElse(null));
+        entity.setType(tobacco.getType());
+        entity.setYear(tobacco.getYear());
         return entity;
     }
 

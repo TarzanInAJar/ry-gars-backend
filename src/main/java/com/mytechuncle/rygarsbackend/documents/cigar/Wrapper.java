@@ -4,17 +4,12 @@ import com.mongodb.lang.NonNull;
 
 public class Wrapper {
     @NonNull
-    private String region;
-    @NonNull
     private String shade;
+    private String region;
+    private String name;
 
     public Wrapper() {
         // default constructor
-    }
-
-    public Wrapper(String region, String shade) {
-        this.region = region;
-        this.shade = shade;
     }
 
     public String getRegion() {
@@ -31,5 +26,13 @@ public class Wrapper {
 
     public void setShade(String shade) {
         this.shade = shade;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -1,12 +1,14 @@
 package com.mytechuncle.rygarsbackend.dto.cigar;
 
-import java.util.Objects;
-import java.util.Optional;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.Objects;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TobaccoDTO {
     private String region; // I.E. Dominican
-    private Optional<String> type;  // criollo
-    private Optional<Integer> year; // I.E. 1998
+    private String type;  // criollo
+    private Integer year; // I.E. 1998
 
     public TobaccoDTO() {
         // default constructor
@@ -14,25 +16,18 @@ public class TobaccoDTO {
 
     public TobaccoDTO(String region) {
         this.region = region;
-        this.type = Optional.empty();
-        this.year = Optional.empty();
     }
 
     public TobaccoDTO(String region, String type) {
         this.region = region;
-        this.type = Optional.ofNullable(type);
     }
 
     public TobaccoDTO(String region, Integer year) {
         this.region = region;
-        this.type = Optional.empty();
-        this.year = Optional.ofNullable(year);
     }
 
     public TobaccoDTO(String region, String type, Integer year) {
         this.region = region;
-        this.type = Optional.ofNullable(type);
-        this.year = Optional.ofNullable(year);
     }
 
     public String getRegion() {
@@ -43,19 +38,19 @@ public class TobaccoDTO {
         this.region = region;
     }
 
-    public Optional<String> getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Optional<String> type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    public Optional<Integer> getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(Optional<Integer> year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 

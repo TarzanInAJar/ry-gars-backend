@@ -1,22 +1,21 @@
 package com.mytechuncle.rygarsbackend.dto.cigar;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.net.URL;
 import java.util.List;
 import java.util.Objects;
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CigarDTO {
     private String id;
     private String brand;
     private String subBrand;
     private String name;
-    private String sizeName;
-    private Integer ringGauge; // I.E. 50
-    private Float length; // I.E. 5.25
-    private WrapperDTO wrapper;
     private TobaccoDTO binder;
     private List<TobaccoDTO> filler;
     private String strength;
-    private List<URL> messages;
+    private List<CigarSizeDTO> sizes;
+    private List<URL> images;
 
     public String getId() {
         return id;
@@ -50,38 +49,6 @@ public class CigarDTO {
         this.name = name;
     }
 
-    public String getSizeName() {
-        return sizeName;
-    }
-
-    public void setSizeName(String sizeName) {
-        this.sizeName = sizeName;
-    }
-
-    public Integer getRingGauge() {
-        return ringGauge;
-    }
-
-    public void setRingGauge(Integer ringGauge) {
-        this.ringGauge = ringGauge;
-    }
-
-    public Float getLength() {
-        return length;
-    }
-
-    public void setLength(Float length) {
-        this.length = length;
-    }
-
-    public WrapperDTO getWrapper() {
-        return wrapper;
-    }
-
-    public void setWrapper(WrapperDTO wrapper) {
-        this.wrapper = wrapper;
-    }
-
     public TobaccoDTO getBinder() {
         return binder;
     }
@@ -106,12 +73,20 @@ public class CigarDTO {
         this.strength = strength;
     }
 
-    public List<URL> getMessages() {
-        return messages;
+    public List<CigarSizeDTO> getSizes() {
+        return sizes;
     }
 
-    public void setMessages(List<URL> messages) {
-        this.messages = messages;
+    public void setSizes(List<CigarSizeDTO> sizes) {
+        this.sizes = sizes;
+    }
+
+    public List<URL> getImages() {
+        return images;
+    }
+
+    public void setImages(List<URL> images) {
+        this.images = images;
     }
 
     @Override
@@ -119,21 +94,18 @@ public class CigarDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CigarDTO cigarDTO = (CigarDTO) o;
-        return Objects.equals(brand, cigarDTO.brand) &&
+        return  Objects.equals(brand, cigarDTO.brand) &&
                 Objects.equals(subBrand, cigarDTO.subBrand) &&
                 Objects.equals(name, cigarDTO.name) &&
-                Objects.equals(sizeName, cigarDTO.sizeName) &&
-                Objects.equals(ringGauge, cigarDTO.ringGauge) &&
-                Objects.equals(length, cigarDTO.length) &&
-                Objects.equals(wrapper, cigarDTO.wrapper) &&
                 Objects.equals(binder, cigarDTO.binder) &&
                 Objects.equals(filler, cigarDTO.filler) &&
                 Objects.equals(strength, cigarDTO.strength) &&
-                Objects.equals(messages, cigarDTO.messages);
+                Objects.equals(sizes, cigarDTO.sizes) &&
+                Objects.equals(images, cigarDTO.images);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand, subBrand, name, sizeName, ringGauge, length, wrapper, binder, filler, strength, messages);
+        return Objects.hash(brand, subBrand, name, binder, filler, strength, sizes, images);
     }
 }

@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.List;
 
 @Document
-@CompoundIndex(unique = true, name = "unique_name_brand_size", def = "{'brand': 1, 'subBrand': 1, 'name': 1, 'sizeName': 1}")
+@CompoundIndex(unique = true, name = "unique_name_brand", def = "{'brand': 1, 'subBrand': 1, 'name': 1}")
 // TODO not created automatically, needs to be manually created
 public class Cigar {
     @Id
@@ -20,19 +20,13 @@ public class Cigar {
     @NonNull
     private String name; // I.E. Opus X The Lost City
     @NonNull
-    private String sizeName; // I.E. Robustu
-    @NonNull
-    private Integer ringGauge; // I.E. 50
-    @NonNull
-    private Float length; // I.E. 5.25
-    @NonNull
-    private Wrapper wrapper;
-    @NonNull
     private Tobacco binder;
     @NonNull
     private List<Tobacco> filler;
     @NonNull
     private STRENGTH strength;
+    @NonNull
+    private List<CigarSize> sizes;
     private List<URL> images;
 
     public String getId() {
@@ -43,11 +37,12 @@ public class Cigar {
         this.id = id;
     }
 
+    @NonNull
     public String getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(@NonNull String brand) {
         this.brand = brand;
     }
 
@@ -59,67 +54,39 @@ public class Cigar {
         this.subBrand = subBrand;
     }
 
+    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(@NonNull String name) {
         this.name = name;
     }
 
-    public String getSizeName() {
-        return sizeName;
-    }
-
-    public void setSizeName(String sizeName) {
-        this.sizeName = sizeName;
-    }
-
-    public Integer getRingGauge() {
-        return ringGauge;
-    }
-
-    public void setRingGauge(Integer ringGauge) {
-        this.ringGauge = ringGauge;
-    }
-
-    public Float getLength() {
-        return length;
-    }
-
-    public void setLength(Float length) {
-        this.length = length;
-    }
-
-    public Wrapper getWrapper() {
-        return wrapper;
-    }
-
-    public void setWrapper(Wrapper wrapper) {
-        this.wrapper = wrapper;
-    }
-
+    @NonNull
     public Tobacco getBinder() {
         return binder;
     }
 
-    public void setBinder(Tobacco binder) {
+    public void setBinder(@NonNull Tobacco binder) {
         this.binder = binder;
     }
 
+    @NonNull
     public List<Tobacco> getFiller() {
         return filler;
     }
 
-    public void setFiller(List<Tobacco> filler) {
+    public void setFiller(@NonNull List<Tobacco> filler) {
         this.filler = filler;
     }
 
+    @NonNull
     public STRENGTH getStrength() {
         return strength;
     }
 
-    public void setStrength(STRENGTH strength) {
+    public void setStrength(@NonNull STRENGTH strength) {
         this.strength = strength;
     }
 
@@ -129,5 +96,14 @@ public class Cigar {
 
     public void setImages(List<URL> images) {
         this.images = images;
+    }
+
+    @NonNull
+    public List<CigarSize> getSizes() {
+        return sizes;
+    }
+
+    public void setSizes(@NonNull List<CigarSize> sizes) {
+        this.sizes = sizes;
     }
 }

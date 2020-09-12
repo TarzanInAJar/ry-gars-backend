@@ -1,48 +1,93 @@
--
-  brand: 'Arturo Fuente'
-  subBrand: 'Fuente Fuente'
-  name: 'Opus X The Lost City'
-  sizeName: 'Robusto'
-  ringGauge: 50
-  length: 5.25
-  wrapper:
+brand: 'Arturo Fuente'
+subBrand: 'Gran Reserva'
+name: 'Hemingway'
+strength: 'Medium'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
     region: 'Dominican Republic'
-    shade: 'Sungrown'
-  binder:
-    region: 'Dominican Republic'
-  filler:
-    -
-      region: 'Dominican Republic'
-  strength: 'Medium'
--
-  brand: 'Arturo Fuente'
-  subBrand: 'Gran Reserva'
-  name: 'Hemingway Signature'
-  sizeName: 'Figurado'
-  ringGauge: 47
-  length: 6
-  wrapper:
-    region: 'African'
-    shade: 'Cameroon'
-  binder:
-    region: 'Dominican Republic'
-  filler:
-    -
-      region: 'Dominican Republic'
-  strength: 'Medium'
--
-  brand: 'Arturo Fuente'
-  subBrand: 'Gran Reserva'
-  name: 'Hemingway Short Story'
-  sizeName: 'Perfecto'
-  ringGauge: 48
-  length: 4
-  wrapper:
-    region: 'African'
-    shade: 'Cameroon'
-  binder:
-    region: 'Dominican Republic'
-  filler:
-    -
-      region: 'Dominican Republic'
-  strength: 'Medium'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'Untold Story'
+    ringGauge: 54
+    length: 7.625
+    wrappers:
+      -
+        shade: 'Maduro'
+  -
+    sizeName: 'Classic'
+    ringGauge: 46
+    length: 7
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+      -
+        shade: 'Maduro'
+  -
+    sizeName: 'Signature'
+    alternativeSizeName: 'Figurado'
+    ringGauge: 46
+    length: 6
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+      -
+        shade: 'Maduro'
+  -
+    sizeName: 'Work of Art'
+    alternativeSizeName: 'Figurado'
+    ringGauge: 46
+    ringGauge2: 60
+    length: 4.875
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+  -
+    sizeName: 'Between the Lines'
+    ringGauge: 45
+    ringGauge2: 54
+    length: 4.5
+    wrappers:
+      -
+        shade: 'Mixed'
+  -
+    sizeName: 'Best Seller'
+    ringGauge: 43
+    ringGauge2: 55
+    length: 4.5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+  -
+    sizeName: 'Short Story'
+    ringGauge: 42
+    ringGauge2: 49
+    length: 4
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'

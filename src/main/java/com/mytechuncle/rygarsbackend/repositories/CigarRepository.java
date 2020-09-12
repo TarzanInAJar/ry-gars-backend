@@ -22,16 +22,14 @@ public interface CigarRepository extends MongoRepository<Cigar, String> {
             "'brand' : ?0" +
             "'subBrand' : ?1" +
             "'name' : ?2" +
-            "'sizeName' : ?3" +
             "}")
-    boolean exists(String brand, String subBrand, String name, String sizeName);
+    boolean exists(String brand, String subBrand, String name);
 
 
     @Query("{ " +
             "'brand' : ?0" +
             "'subBrand' : ?1" +
             "'name' : ?2" +
-            "'sizeName' : ?3" +
             "}")
-    Optional<Cigar> findOne(String brand, String subBrand, String name, String sizeName);
+    Optional<Cigar> findOne(String brand, String subBrand, String name);
 }

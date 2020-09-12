@@ -1,19 +1,17 @@
 package com.mytechuncle.rygarsbackend.bootstrap;
 
+import java.net.URL;
 import java.util.List;
-import java.util.Map;
 
 public class BootstrapCigar {
     private String brand;
     private String subBrand;
     private String name;
-    private String sizeName;
-    private Integer ringGauge;
-    private Float length;
-    private Map<String, String> wrapper;
-    private Map<String, String> binder;
-    private List<Map<String, String>> filler;
+    private BootstrapTobacco binder;
+    private List<BootstrapTobacco> filler;
     private String strength;
+    private List<BootstrapCigarSize> sizes;
+    private List<URL> images;
 
     public String getBrand() {
         return brand;
@@ -39,51 +37,19 @@ public class BootstrapCigar {
         this.name = name;
     }
 
-    public String getSizeName() {
-        return sizeName;
-    }
-
-    public void setSizeName(String sizeName) {
-        this.sizeName = sizeName;
-    }
-
-    public Integer getRingGauge() {
-        return ringGauge;
-    }
-
-    public void setRingGauge(Integer ringGauge) {
-        this.ringGauge = ringGauge;
-    }
-
-    public Float getLength() {
-        return length;
-    }
-
-    public void setLength(Float length) {
-        this.length = length;
-    }
-
-    public Map<String, String> getWrapper() {
-        return wrapper;
-    }
-
-    public void setWrapper(Map<String, String> wrapper) {
-        this.wrapper = wrapper;
-    }
-
-    public Map<String, String> getBinder() {
+    public BootstrapTobacco getBinder() {
         return binder;
     }
 
-    public void setBinder(Map<String, String> binder) {
+    public void setBinder(BootstrapTobacco binder) {
         this.binder = binder;
     }
 
-    public List<Map<String, String>> getFiller() {
+    public List<BootstrapTobacco> getFiller() {
         return filler;
     }
 
-    public void setFiller(List<Map<String, String>> filler) {
+    public void setFiller(List<BootstrapTobacco> filler) {
         this.filler = filler;
     }
 
@@ -93,5 +59,21 @@ public class BootstrapCigar {
 
     public void setStrength(String strength) {
         this.strength = strength;
+    }
+
+    public List<BootstrapCigarSize> getSizes() {
+        return sizes;
+    }
+
+    public void setSizes(List<BootstrapCigarSize> sizes) {
+        this.sizes = sizes;
+    }
+
+    public List<URL> getImages() {
+        return images;
+    }
+
+    public void setImages(List<URL> images) {
+        this.images = images;
     }
 }
