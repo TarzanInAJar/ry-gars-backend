@@ -57,14 +57,9 @@ public class BootstrapCigarsService {
         for (File cigarFile : bootstrappableCigarFiles) {
             Yaml yaml = new Yaml();
             InputStream inputStream = new FileInputStream(cigarFile);
-            BootstrapCigar[] cigars = yaml.loadAs(inputStream, BootstrapCigar[].class);
-            Map<BootstrapResult, Long> resultsMap = asList(cigars).stream()
-                    .map(this::bootstrapCigar)
-                    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-            logger.info("ignored " + (resultsMap.get(BootstrapResult.ignored) != null ? resultsMap.get(BootstrapResult.ignored) : 0));
-            logger.info("created " + (resultsMap.get(BootstrapResult.created) != null ? resultsMap.get(BootstrapResult.created) : 0));
-            logger.info("updated " + (resultsMap.get(BootstrapResult.updated) != null ? resultsMap.get(BootstrapResult.updated) : 0));
+            BootstrapCigar cigar = yaml.loadAs(inputStream, BootstrapCigar.class);
+            BootstrapResult result = bootstrapCigar(cigar);
+            logger.info(cigar.getBrand() + " " + cigar.getName() + ": " + result.name());
         }
    }
 
