@@ -32,4 +32,51 @@ public interface CigarRepository extends MongoRepository<Cigar, String> {
             "'name' : ?2" +
             "}")
     Optional<Cigar> findOne(String brand, String subBrand, String name);
+
+    @Query("{ " +
+            "$or: [" +
+            "{'brand' : { $regex: /.*?0.*/, $options: 'i' } }" +
+            "{'subBrand' : { $regex: /.*?0.*/, $options: 'i' } }" +
+            "{'name' : { $regex: /.*?0.*/, $options: 'i' } }" +
+            "]}")
+    Page<IdName> findAllByBrandOrSubBrandOrName(String search, Pageable pageable);
+
+    public class IdName {
+        private String id;
+        private String brand;
+        private String subBrand;
+        private String name;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getBrand() {
+            return brand;
+        }
+
+        public void setBrand(String brand) {
+            this.brand = brand;
+        }
+
+        public String getSubBrand() {
+            return subBrand;
+        }
+
+        public void setSubBrand(String subBrand) {
+            this.subBrand = subBrand;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 }
