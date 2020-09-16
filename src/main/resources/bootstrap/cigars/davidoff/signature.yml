@@ -1,0 +1,91 @@
+brand: 'Davidoff'
+name: 'Signature'
+binder:
+  region: 'Ecuador Hybrid'
+filler:
+  -
+    region: 'Dominican Republic'
+strength: 'Mild_Medium'
+sizes:
+  -
+    sizeName: "1000"
+    alternativeSizeName: 'Petit Panetela'
+    ringGauge: 34
+    length: 4.625
+    binder:
+      region: 'Dominican Republic'
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuadorian'
+  -
+    sizeName: "2000"
+    alternativeSizeName: 'Corona'
+    ringGauge: 43
+    length: 5
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuadorian'
+  -
+    sizeName: "6000"
+    alternativeSizeName: 'Robusto'
+    ringGauge: 48
+    length: 5
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Ambassadrice"
+    alternativeSizeName: 'Senorita'
+    ringGauge: 26
+    length: 4.5
+    binder:
+      region: 'Mexican'
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Exquisitos"
+    alternativeSizeName: 'Small Cigar'
+    ringGauge: 22
+    length: 3.625
+    strength: 'Medium'
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuadorian'
+  -
+    sizeName: "No. 2"
+    alternativeSizeName: 'Panetela'
+    ringGauge: 38
+    length: 6
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuadorian'
+
+  -
+    sizeName: "Petit Corona"
+    ringGauge: 41
+    length: 4.5
+    binder:
+      region: 'Dominican Republic'
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Toro"
+    ringGauge: 54
+    length: 6
+    binder:
+      region: 'Ecuadorian'
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+
+
