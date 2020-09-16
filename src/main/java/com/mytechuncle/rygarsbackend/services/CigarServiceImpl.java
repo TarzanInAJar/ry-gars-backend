@@ -37,6 +37,11 @@ public class CigarServiceImpl implements CigarService {
     }
 
     @Override
+    public CigarDTO getCigarById(String id) {
+        return dao.getCigarById(id);
+    }
+
+    @Override
     public void updateCigar(CigarDTO cigar) {
         if (cigar.getId() == null) {
             throw new IllegalArgumentException("Update cigar request must have an id!");

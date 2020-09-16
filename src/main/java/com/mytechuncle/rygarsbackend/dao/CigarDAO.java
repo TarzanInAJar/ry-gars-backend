@@ -50,6 +50,14 @@ public class CigarDAO {
         return cigarRepository.exists(brand, subBrand, name);
     }
 
+    public CigarDTO getCigarById(String id) {
+        Optional<Cigar> cigar = cigarRepository.findById(id);
+        if (cigar.isPresent()) {
+            return getDTO(cigar.get());
+        }
+        return null;
+    }
+
     private CigarDTO getDTO(Cigar cigar) {
         CigarDTO dto = new CigarDTO();
         dto.setBrand(cigar.getBrand());
@@ -137,5 +145,4 @@ public class CigarDAO {
         entity.setYear(tobacco.getYear());
         return entity;
     }
-
 }

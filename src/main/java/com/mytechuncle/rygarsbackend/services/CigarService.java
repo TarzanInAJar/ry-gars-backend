@@ -10,4 +10,5 @@ public interface CigarService {
     Page<CigarDTO> getCigarsByBrand(Pageable pageable, String brand);
     boolean exists(String brand, String subBrand, String name);
     CigarDTO getCigar(String brand, String subBrand, String name);
+    CigarDTO getCigarById(String id);
 }
