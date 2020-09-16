@@ -4,6 +4,7 @@ import com.mongodb.lang.NonNull;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 
 //TODO unique constraint? for sizeName
 public class CigarSize {
@@ -18,6 +19,10 @@ public class CigarSize {
     @NonNull
     private List<Wrapper> wrappers;
     private List<URL> images;
+
+    private Optional<Tobacco> binder;  // overrides the default
+    private Optional<List<Tobacco>> filler;
+    private Optional<STRENGTH> strength;
 
     @NonNull
     public String getSizeName() {
@@ -77,5 +82,29 @@ public class CigarSize {
 
     public void setImages(List<URL> images) {
         this.images = images;
+    }
+
+    public Optional<Tobacco> getBinder() {
+        return binder;
+    }
+
+    public void setBinder(Optional<Tobacco> binder) {
+        this.binder = binder;
+    }
+
+    public Optional<List<Tobacco>> getFiller() {
+        return filler;
+    }
+
+    public void setFiller(Optional<List<Tobacco>> filler) {
+        this.filler = filler;
+    }
+
+    public Optional<STRENGTH> getStrength() {
+        return strength;
+    }
+
+    public void setStrength(Optional<STRENGTH> strength) {
+        this.strength = strength;
     }
 }
