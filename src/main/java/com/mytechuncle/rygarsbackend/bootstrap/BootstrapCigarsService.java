@@ -40,15 +40,6 @@ public class BootstrapCigarsService {
                 .getResource("bootstrap/cigars")
                 .getFile());
 
-        FilenameFilter yamlFilter = (dir, name) -> {
-            String lower = name.toLowerCase();
-            if (lower.endsWith(".yml") || lower.endsWith(".yaml")) {
-                return true;
-            }
-            return false;
-        };
-
-        //List<File> bootstrappableCigarFiles = asList(bootstrappableCigarsDirectory.listFiles(yamlFilter));
         List<File> bootstrappableCigarFiles = Files.walk(bootstrappableCigarsDirectory.toPath())
                 .filter(x -> x.toString().toLowerCase().endsWith(".yml"))
                 .map(Path::toFile)
