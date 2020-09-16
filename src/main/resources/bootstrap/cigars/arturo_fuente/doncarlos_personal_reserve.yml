@@ -8,6 +8,11 @@ binder:
 filler:
   -
     region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Natural'
+    region: 'African'
+    name: 'African Cameroon'
 images:
   - 'http://hehe.com/heh.jpeg'
 sizes:
@@ -15,10 +20,6 @@ sizes:
     sizeName: 'Robusto'
     ringGauge: 50
     length: 5
-    wrappers:
-      -
-        shade: 'Natural'
-        region: 'African'
-        name: 'African Cameroon'
+
 
 

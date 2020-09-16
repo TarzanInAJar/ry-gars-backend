@@ -5,6 +5,10 @@ binder:
 filler:
   -
     region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'EMS'
+    region: 'Dominican Republic'
 strength: 'Medium'
 sizes:
   -
@@ -12,52 +16,29 @@ sizes:
     alternativeSizeName: 'Double Corona'
     ringGauge: 50
     length: 7.5
-    wrappers:
-      -
-        shade: 'EMS'
-        region: 'Dominican Republic'
   -
     sizeName: "Entreacto"
     alternativeSizeName: 'Short Corona'
     ringGauge: 43
     length: 3.5
-    wrappers:
-      -
-        shade: 'EMS'
-        region: 'Dominican Republic'
   -
     sizeName: "No. 3"
     alternativeSizeName: 'Toro'
     ringGauge: 50
     length: 6
-    wrappers:
-      -
-        shade: 'EMS'
-        region: 'Dominican Republic'
   -
     sizeName: "Short Perfecto"
     ringGauge: 52
     length: 4.75
-    wrappers:
-      -
-        shade: 'EMS'
-        region: 'Dominican Republic'
   -
     sizeName: "Special 'R'"
     alternativeSizeName: 'Robusto'
     ringGauge: 50
     length: 5
-    wrappers:
-      -
-        shade: 'EMS'
-        region: 'Dominican Republic'
   -
     sizeName: "Special 'T'"
     alternativeSizeName: 'Torpedo'
     ringGauge: 52
     length: 6
-    wrappers:
-      -
-        shade: 'EMS'
-        region: 'Dominican Republic'
+
 

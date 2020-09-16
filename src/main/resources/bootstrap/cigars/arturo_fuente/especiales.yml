@@ -6,6 +6,10 @@ binder:
 filler:
   -
     region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Habano'
+    region: 'Ecuadorian'
 images:
   - 'http://hehe.com/heh.jpeg'
 sizes:
@@ -13,23 +17,11 @@ sizes:
     sizeName: 'Cazadores'
     ringGauge: 50
     length: 6
-    wrappers:
-      -
-        shade: 'Habano'
-        region: 'Ecuadorian'
   -
     sizeName: 'Conquistadores'
     ringGauge: 56
     length: 5.5
-    wrappers:
-      -
-        shade: 'Habano'
-        region: 'Ecuadorian'
   -
     sizeName: 'Emperador'
     ringGauge: 52
     length: 7
-    wrappers:
-      -
-        shade: 'Habano'
-        region: 'Ecuadorian'

@@ -6,6 +6,10 @@ binder:
 filler:
   -
     region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Dominican'
+    region: 'Dominican Republic'
 images:
   - 'http://hehe.com/heh.jpeg'
 sizes:
@@ -13,39 +17,19 @@ sizes:
     sizeName: 'Robusto'
     ringGauge: 50
     length: 5.25
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Toro'
     ringGauge: 48
     length: 6.75
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Piramide'
     ringGauge: 52
     length: 6.375
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Double Robusto'
     ringGauge: 52
     length: 5.75
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Lancero'
     ringGauge: 38
     length: 7.5
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'

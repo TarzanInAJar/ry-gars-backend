@@ -7,8 +7,42 @@ filler:
     region: 'Dominican Republic'
   -
     region: 'Nicaraguan'
+wrappers:
+  -
+    shade: 'Habano'
+    region: 'Ecuadorian'
 strength: 'Full'
 sizes:
+  -
+    sizeName: "Churchill"
+    ringGauge: 47
+    length: 6.875
+  -
+    sizeName: "Petit Corona"
+    ringGauge: 41
+    length: 4.5
+  -
+    sizeName: "Robusto"
+    ringGauge: 52
+    length: 5.25
+  -
+    sizeName: "Toro"
+    ringGauge: 54
+    length: 6
+  -
+    sizeName: "Petit Panatela"
+    ringGauge: 38
+    length: 4
+    binder:
+      region: 'Peruvian'
+    filler:
+      -
+        region: 'Dominican Republic'
+    strength: "Medium_Full"
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuadorian'
   -
     sizeName: "Belicoso"
     ringGauge: 46
@@ -23,49 +57,3 @@ sizes:
         shade: 'Connecticut'
         region: 'Ecuadorian'
     strength: 'Medium_Full'
-  -
-    sizeName: "Churchill"
-    ringGauge: 47
-    length: 6.875
-    wrappers:
-      -
-        shade: 'Habano'
-        region: 'Ecuadorian'
-  -
-    sizeName: "Petit Corona"
-    ringGauge: 41
-    length: 4.5
-    wrappers:
-      -
-        shade: 'Habano'
-        region: 'Ecuadorian'
-  -
-    sizeName: "Petit Panatela"
-    ringGauge: 38
-    length: 4
-    binder:
-      region: 'Peruvian'
-    filler:
-        -
-          region: 'Dominican Republic'
-    strength: "Medium_Full"
-    wrappers:
-      -
-        shade: 'Connecticut'
-        region: 'Ecuadorian'
-  -
-    sizeName: "Robusto"
-    ringGauge: 52
-    length: 5.25
-    wrappers:
-      -
-        shade: 'Habano'
-        region: 'Ecuadorian'
-  -
-    sizeName: "Toro"
-    ringGauge: 54
-    length: 6
-    wrappers:
-      -
-        shade: 'Habano'
-        region: 'Ecuadorian'

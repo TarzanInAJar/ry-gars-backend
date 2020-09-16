@@ -6,6 +6,10 @@ binder:
 filler:
   -
     region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Dominican'
+    region: 'Dominican Republic'
 images:
   - 'http://hehe.com/heh.jpeg'
 sizes:
@@ -13,103 +17,52 @@ sizes:
     sizeName: 'Double Corona'
     ringGauge: 49
     length: 7.625
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: "Reserva D'Chateau"
     ringGauge: 48
     length: 7
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Perfecxion No. 2'
     ringGauge: 52
     length: 6.375
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Perfecxion X'
     ringGauge: 48
     length: 6.25
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Petit Lancero'
     ringGauge: 39
     length: 6.25
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Fuente Fuente'
     ringGauge: 46
     length: 5.625
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Super Belicoso'
     ringGauge: 52
     length: 5.5
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Perfecxion No. 77 Shark'
     ringGauge: 52
     length: 5.5
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Robusto'
     ringGauge: 50
     length: 5.25
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Double Robusto'
     ringGauge: 52
     length: 5.75
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Perfecxion No. 4 Series X'
     ringGauge: 43
     length: 5.1875
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Perfecxion No. 5'
     ringGauge: 40
     length: 4.875
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Belicoso XXX'
     ringGauge: 49
     length: 4.625
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
+

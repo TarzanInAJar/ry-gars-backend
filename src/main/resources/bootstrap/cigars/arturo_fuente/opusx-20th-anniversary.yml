@@ -6,6 +6,10 @@ binder:
 filler:
   -
     region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Dominican'
+    region: 'Dominican Republic'
 images:
   - 'http://hehe.com/heh.jpeg'
 sizes:
@@ -13,31 +17,15 @@ sizes:
     sizeName: "God's Whisper"
     ringGauge: 56
     length: 6.5
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Power of the Dream'
     ringGauge: 52
     length: 6.375
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Father & Son'
     ringGauge: 49
     length: 6.25
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'
   -
     sizeName: 'Believe'
     ringGauge: 52
     length: 5.75
-    wrappers:
-      -
-        shade: 'Dominican'
-        region: 'Dominican Republic'

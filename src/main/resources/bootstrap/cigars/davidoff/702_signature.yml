@@ -5,6 +5,10 @@ binder:
 filler:
   -
     region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Habano'
+    region: 'Ecuadorian'
 strength: 'Medium'
 sizes:
   -
@@ -12,17 +16,8 @@ sizes:
     alternativeSizeName: 'Corona'
     ringGauge: 43
     length: 5.0625
-    wrappers:
-      -
-        shade: 'Habano'
-        region: 'Ecuadorian'
-
   -
     sizeName: "No. 2"
     alternativeSizeName: 'Panetela'
     ringGauge: 38
     length: 6
-    wrappers:
-      -
-        shade: 'Habano'
-        region: 'Ecuadorian'
