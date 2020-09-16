@@ -56,7 +56,7 @@ public class BootstrapCigarsService {
 
     /**
      * Attempts to bootstrap cigar.
-     * @param cigar
+     * @param cigar - cigar details from yml config
      * @throws IllegalArgumentException - invalid cigar passed as argument
      */
     private BootstrapResult bootstrapCigar(BootstrapCigar cigar) throws IllegalArgumentException {

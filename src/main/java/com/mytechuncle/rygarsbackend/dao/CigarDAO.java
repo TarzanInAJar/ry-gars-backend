@@ -49,10 +49,7 @@ public class CigarDAO {
 
     public CigarDTO getCigarById(String id) {
         Optional<Cigar> cigar = cigarRepository.findById(id);
-        if (cigar.isPresent()) {
-            return getDTO(cigar.get());
-        }
-        return null;
+        return cigar.map(this::getDTO).orElse(null);
     }
 
     private CigarDTO getDTO(Cigar cigar) {
@@ -63,7 +60,7 @@ public class CigarDAO {
         dto.setBinder(getDTO(cigar.getBinder()));
         dto.setFiller(cigar.getFiller().stream().map(this::getDTO).collect(toList()));
         dto.setId(cigar.getId());
-        dto.setStrength(cigar.getStrength() != null ? WordUtils.capitalizeFully(cigar.getStrength().name()) : null);
+        dto.setStrength(WordUtils.capitalizeFully(cigar.getStrength().name()));
         dto.setSizes(cigar.getSizes().stream().map(this::getDTO).collect(toList()));
         dto.setImages(cigar.getImages());
         return dto;
