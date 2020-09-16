@@ -18,6 +18,7 @@ public class CigarServiceImpl implements CigarService {
         if (cigar.getId() != null) {
             throw new IllegalArgumentException("New cigar cannot have a specified id!");
         }
+        validCigar(cigar); // throws exception if not valid
         return dao.save(cigar);
     }
 
@@ -48,6 +49,19 @@ public class CigarServiceImpl implements CigarService {
         } else if (!dao.exists(cigar.getId())) {
             throw new IllegalArgumentException("Can't update - no cigar exists for id " + cigar.getId());
         }
+        validCigar(cigar); // throws exception if not valid
         dao.save(cigar);
+    }
+
+    private void validCigar(CigarDTO cigar) {
+        if (cigar.getStrength() == null && cigar.getSizes().stream().anyMatch(size -> size.getStrength() == null)) {
+            throw new IllegalArgumentException("Can't update - size exists with no strength!");
+        } else if (cigar.getFiller() == null && cigar.getSizes().stream().anyMatch(size -> size.getFiller() == null)) {
+            throw new IllegalArgumentException("Can't update - size exists with no filler!");
+        } else if (cigar.getBinder() == null && cigar.getSizes().stream().anyMatch(size -> size.getBinder() == null)) {
+            throw new IllegalArgumentException("Can't update - size exists with no binder!");
+        } else if (cigar.getWrappers() == null && cigar.getSizes().stream().anyMatch(size -> size.getWrappers() == null)) {
+            throw new IllegalArgumentException("Can't update - size exists with no wrappers!");
+        }
     }
 }
