@@ -21,7 +21,7 @@ public class CigarTestUtils {
         cigar.setWrapper(new WrapperDTO("African", "Cameroon"));
         cigar.setBinder(new TobaccoDTO("Dominican"));
         cigar.setFiller(asList(new TobaccoDTO("Dominican")));
-        cigar.setStrength(WordUtils.capitalizeFully(STRENGTH.MEDIUM.toString()));
+        cigar.setStrength(WordUtils.capitalizeFully(STRENGTH.MEDIUM.toString(), '_'));
         return cigar;
     }
 
@@ -36,7 +36,7 @@ public class CigarTestUtils {
         cigar.setWrapper(new WrapperDTO("African", "Cameroon"));
         cigar.setBinder(new TobaccoDTO("Dominican"));
         cigar.setFiller(asList(new TobaccoDTO("Dominican")));
-        cigar.setStrength(WordUtils.capitalizeFully(STRENGTH.MEDIUM.toString()));
+        cigar.setStrength(WordUtils.capitalizeFully(STRENGTH.MEDIUM.toString(), '_'));
         return cigar;
     }
 }

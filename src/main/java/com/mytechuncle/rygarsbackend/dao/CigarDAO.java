@@ -62,9 +62,12 @@ public class CigarDAO {
         dto.setTags(cigar.getTags());
         dto.setName(cigar.getName());
         dto.setBinder(getDTO(cigar.getBinder()));
-        dto.setFiller(cigar.getFiller().stream().map(this::getDTO).collect(toList()));
+        dto.setFiller(cigar.getFiller() != null ?
+                cigar.getFiller().stream().map(this::getDTO).collect(toList()) : null);
+        dto.setWrappers(cigar.getWrappers() != null ?
+                cigar.getWrappers().stream().map(this::getDTO).collect(toList()) : null);
         dto.setId(cigar.getId());
-        dto.setStrength(WordUtils.capitalizeFully(cigar.getStrength().name()));
+        dto.setStrength(cigar.getStrength() != null ? WordUtils.capitalizeFully(cigar.getStrength().name(), '_') : null);
         dto.setSizes(cigar.getSizes().stream().map(this::getDTO).collect(toList()));
         dto.setImages(cigar.getImages());
         return dto;
@@ -85,7 +88,7 @@ public class CigarDAO {
         dto.setFiller(cigarSize.getFiller() != null ?
                 cigarSize.getFiller().stream().map(this::getDTO).collect(toList()) : null);
         dto.setStrength(cigarSize.getStrength() != null ?
-                WordUtils.capitalizeFully(cigarSize.getStrength().name()) : null);
+                WordUtils.capitalizeFully(cigarSize.getStrength().name(), '_') : null);
         return dto;
     }
 
@@ -122,11 +125,14 @@ public class CigarDAO {
             entity = new Cigar();
         }
         entity.setBinder(getEntity(cigar.getBinder()));
-        entity.setFiller(cigar.getFiller().stream().map(this::getEntity).collect(toList()));
+        entity.setFiller(cigar.getFiller() != null ?
+                cigar.getFiller().stream().map(this::getEntity).collect(toList()) : null);
+        entity.setWrappers(cigar.getWrappers() != null ?
+                cigar.getWrappers().stream().map(this::getEntity).collect(toList()) : null);
         entity.setName(cigar.getName());
         entity.setBrand(cigar.getBrand());
         entity.setTags(cigar.getTags());
-        entity.setStrength(STRENGTH.valueOf(cigar.getStrength().toUpperCase()));
+        entity.setStrength(cigar.getStrength() != null ? STRENGTH.valueOf(cigar.getStrength().toUpperCase()) : null);
         entity.setSizes(cigar.getSizes().stream().map(this::getEntity).collect(toList()));
         entity.setImages(cigar.getImages());
         return entity;
@@ -143,7 +149,8 @@ public class CigarDAO {
         entity.setRingGauge(size.getRingGauge());
         entity.setRingGauge2(size.getRingGauge2());
         entity.setImages(size.getImages());
-        entity.setWrappers(size.getWrappers().stream().map(this::getEntity).collect(toList()));
+        entity.setWrappers(size.getWrappers() != null ?
+                size.getWrappers().stream().map(this::getEntity).collect(toList()) : null);
         entity.setImages(size.getImages());
         entity.setBinder(getEntity(size.getBinder()));
         entity.setFiller(size.getFiller() != null ?

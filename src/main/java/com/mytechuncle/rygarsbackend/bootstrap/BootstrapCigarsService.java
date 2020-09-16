@@ -5,6 +5,7 @@ import com.mytechuncle.rygarsbackend.dto.cigar.CigarSizeDTO;
 import com.mytechuncle.rygarsbackend.dto.cigar.TobaccoDTO;
 import com.mytechuncle.rygarsbackend.dto.cigar.WrapperDTO;
 import com.mytechuncle.rygarsbackend.services.CigarService;
+import org.apache.commons.text.WordUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,7 +83,8 @@ public class BootstrapCigarsService {
 
     private CigarDTO getDTO(BootstrapCigar cigar) {
         CigarDTO dto = new CigarDTO();
-        dto.setStrength(cigar.getStrength());
+        dto.setStrength(cigar.getStrength() != null ?
+                WordUtils.capitalizeFully(cigar.getStrength(), '_') : null);
         dto.setBrand(cigar.getBrand());
         dto.setName(cigar.getName());
         dto.setTags(cigar.getTags());
@@ -97,18 +99,18 @@ public class BootstrapCigarsService {
                 })
                 .collect(toList()) : null);
 
-        dto.setBinder(new TobaccoDTO(
+        dto.setBinder(cigar.getBinder() != null ? new TobaccoDTO(
                 cigar.getBinder().getRegion(),
                 cigar.getBinder().getType(),
-                cigar.getBinder().getYear()));
+                cigar.getBinder().getYear()) : null);
 
-        dto.setFiller(cigar.getFiller().stream()
+        dto.setFiller(cigar.getFiller() != null ? cigar.getFiller().stream()
                 .map(filler -> new TobaccoDTO(
                         filler.getRegion(),
                         filler.getType(),
                         filler.getYear()
                 ))
-                .collect(toList()));
+                .collect(toList()) : null);
 
         dto.setSizes(cigar.getSizes().stream()
                 .map(size -> {
@@ -119,7 +121,7 @@ public class BootstrapCigarsService {
                     sizeDTO.setRingGauge(size.getRingGauge());
                     sizeDTO.setRingGauge2(size.getRingGauge2());
                     sizeDTO.setImages(size.getImages());
-                    sizeDTO.setWrappers(size.getWrappers().stream()
+                    sizeDTO.setWrappers(size.getWrappers() != null ? size.getWrappers().stream()
                             .map(wrapper -> {
                                 WrapperDTO wrapperDTO = new WrapperDTO();
                                 wrapperDTO.setShade(wrapper.getShade());
@@ -127,7 +129,7 @@ public class BootstrapCigarsService {
                                 wrapperDTO.setName(wrapper.getName());
                                 return wrapperDTO;
                             })
-                            .collect(toList()));
+                            .collect(toList()) : null);
                     sizeDTO.setBinder(size.getBinder() != null ? new TobaccoDTO(
                             size.getBinder().getRegion(),
                             size.getBinder().getType(),
@@ -139,7 +141,8 @@ public class BootstrapCigarsService {
                                     tobacco.getType(),
                                     tobacco.getYear()
                             )).collect(toList()) : null);
-                    sizeDTO.setStrength(size.getStrength());
+                    sizeDTO.setStrength(size.getStrength() != null ?
+                            WordUtils.capitalizeFully(size.getStrength(), '_') : null);
                     return sizeDTO;
                 })
                 .collect(toList()));
