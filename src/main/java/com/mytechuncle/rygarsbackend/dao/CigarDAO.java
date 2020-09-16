@@ -83,7 +83,8 @@ public class CigarDAO {
         dto.setRingGauge(cigarSize.getRingGauge());
         dto.setRingGauge2(cigarSize.getRingGauge2());
         dto.setAlternativeSizeName(cigarSize.getAlternativeSizeName());
-        dto.setWrappers(cigarSize.getWrappers().stream().map(this::getDTO).collect(toList()));
+        dto.setWrappers(cigarSize.getWrappers() != null ?
+                cigarSize.getWrappers().stream().map(this::getDTO).collect(toList()): null);
         dto.setBinder(getDTO(cigarSize.getBinder()));
         dto.setFiller(cigarSize.getFiller() != null ?
                 cigarSize.getFiller().stream().map(this::getDTO).collect(toList()) : null);
