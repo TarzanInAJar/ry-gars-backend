@@ -87,6 +87,15 @@ public class BootstrapCigarsService {
         dto.setName(cigar.getName());
         dto.setTags(cigar.getTags());
         dto.setImages(cigar.getImages());
+        dto.setWrappers(cigar.getWrappers() != null ? cigar.getWrappers().stream()
+                .map(wrapper -> {
+                    WrapperDTO wrapperDTO = new WrapperDTO();
+                    wrapperDTO.setShade(wrapper.getShade());
+                    wrapperDTO.setRegion(wrapper.getRegion());
+                    wrapperDTO.setName(wrapper.getName());
+                    return wrapperDTO;
+                })
+                .collect(toList()) : null);
 
         dto.setBinder(new TobaccoDTO(
                 cigar.getBinder().getRegion(),

@@ -9,6 +9,7 @@ public class BootstrapCigar {
     private String name;
     private BootstrapTobacco binder;
     private List<BootstrapTobacco> filler;
+    private List<BootstrapWrapper> wrappers;
     private String strength;
     private List<BootstrapCigarSize> sizes;
     private List<URL> images;
@@ -51,6 +52,14 @@ public class BootstrapCigar {
 
     public void setFiller(List<BootstrapTobacco> filler) {
         this.filler = filler;
+    }
+
+    public List<BootstrapWrapper> getWrappers() {
+        return wrappers;
+    }
+
+    public void setWrappers(List<BootstrapWrapper> wrappers) {
+        this.wrappers = wrappers;
     }
 
     public String getStrength() {

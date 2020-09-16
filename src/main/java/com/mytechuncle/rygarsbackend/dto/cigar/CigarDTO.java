@@ -14,6 +14,7 @@ public class CigarDTO {
     private String name;
     private TobaccoDTO binder;
     private List<TobaccoDTO> filler;
+    private List<WrapperDTO> wrappers;
     private String strength;
     private List<CigarSizeDTO> sizes;
     private List<URL> images;
@@ -66,6 +67,14 @@ public class CigarDTO {
         this.filler = filler;
     }
 
+    public List<WrapperDTO> getWrappers() {
+        return wrappers;
+    }
+
+    public void setWrappers(List<WrapperDTO> wrappers) {
+        this.wrappers = wrappers;
+    }
+
     public String getStrength() {
         return strength;
     }
@@ -95,12 +104,12 @@ public class CigarDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CigarDTO cigarDTO = (CigarDTO) o;
-        return Objects.equals(id, cigarDTO.id) &&
-                Objects.equals(brand, cigarDTO.brand) &&
+        return  Objects.equals(brand, cigarDTO.brand) &&
                 Objects.equals(tags, cigarDTO.tags) &&
                 Objects.equals(name, cigarDTO.name) &&
                 Objects.equals(binder, cigarDTO.binder) &&
                 Objects.equals(filler, cigarDTO.filler) &&
+                Objects.equals(wrappers, cigarDTO.wrappers) &&
                 Objects.equals(strength, cigarDTO.strength) &&
                 Objects.equals(sizes, cigarDTO.sizes) &&
                 Objects.equals(images, cigarDTO.images);
@@ -108,6 +117,6 @@ public class CigarDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, brand, tags, name, binder, filler, strength, sizes, images);
+        return Objects.hash(brand, tags, name, binder, filler, wrappers, strength, sizes, images);
     }
 }

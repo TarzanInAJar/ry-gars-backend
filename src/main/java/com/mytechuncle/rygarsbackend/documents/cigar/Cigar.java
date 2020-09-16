@@ -19,11 +19,10 @@ public class Cigar {
     private List<String> tags; // I.E. Fuente Fuente
     @NonNull
     private String name; // I.E. Opus X The Lost City
-    @NonNull
     private Tobacco binder;
     @NonNull
-    private List<Tobacco> filler;
-    @NonNull
+    private List<Tobacco> filler; // todo pluralize
+    private List<Wrapper> wrappers;
     private STRENGTH strength;
     @NonNull
     private List<CigarSize> sizes;
@@ -63,30 +62,35 @@ public class Cigar {
         this.name = name;
     }
 
-    @NonNull
     public Tobacco getBinder() {
         return binder;
     }
 
-    public void setBinder(@NonNull Tobacco binder) {
+    public void setBinder(Tobacco binder) {
         this.binder = binder;
     }
 
-    @NonNull
     public List<Tobacco> getFiller() {
         return filler;
     }
 
-    public void setFiller(@NonNull List<Tobacco> filler) {
+    public void setFiller(List<Tobacco> filler) {
         this.filler = filler;
     }
 
-    @NonNull
+    public List<Wrapper> getWrappers() {
+        return wrappers;
+    }
+
+    public void setWrappers(List<Wrapper> wrappers) {
+        this.wrappers = wrappers;
+    }
+
     public STRENGTH getStrength() {
         return strength;
     }
 
-    public void setStrength(@NonNull STRENGTH strength) {
+    public void setStrength(STRENGTH strength) {
         this.strength = strength;
     }
 
