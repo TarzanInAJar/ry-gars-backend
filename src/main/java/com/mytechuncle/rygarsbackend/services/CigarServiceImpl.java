@@ -27,13 +27,13 @@ public class CigarServiceImpl implements CigarService {
     }
 
     @Override
-    public boolean exists(String brand, String subBrand, String name) {
-        return dao.exists(brand, subBrand, name);
+    public boolean exists(String brand, String name) {
+        return dao.exists(brand, name);
     }
 
     @Override
-    public CigarDTO getCigar(String brand, String subBrand, String name) {
-        return dao.getCigar(brand, subBrand, name);
+    public CigarDTO getCigar(String brand, String name) {
+        return dao.getCigar(brand, name);
     }
 
     @Override

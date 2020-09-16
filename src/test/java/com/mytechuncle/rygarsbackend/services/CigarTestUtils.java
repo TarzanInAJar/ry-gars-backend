@@ -13,7 +13,7 @@ public class CigarTestUtils {
     public static CigarDTO getHemingwaySignature() {
         CigarDTO cigar = new CigarDTO();
         cigar.setBrand("Arturo Fuente");
-        cigar.setSubBrand("Gran Reserva");
+        cigar.setTags(asList("Gran Reserva"));
         cigar.setName("Hemingway Signature");
         cigar.setSizeName("Figurado");
         cigar.setRingGauge(47);

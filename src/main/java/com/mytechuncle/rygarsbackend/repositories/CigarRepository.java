@@ -20,23 +20,21 @@ public interface CigarRepository extends MongoRepository<Cigar, String> {
 
     @ExistsQuery("{ " +
             "'brand' : ?0" +
-            "'subBrand' : ?1" +
-            "'name' : ?2" +
+            "'name' : ?1" +
             "}")
-    boolean exists(String brand, String subBrand, String name);
+    boolean exists(String brand, String name);
 
 
     @Query("{ " +
             "'brand' : ?0" +
-            "'subBrand' : ?1" +
-            "'name' : ?2" +
+            "'name' : ?1" +
             "}")
-    Optional<Cigar> findOne(String brand, String subBrand, String name);
+    Optional<Cigar> findOne(String brand, String name);
 
     @Query("{ " +
             "$or: [" +
             "{'brand' : { $regex: /.*?0.*/, $options: 'i' } }" +
-            "{'subBrand' : { $regex: /.*?0.*/, $options: 'i' } }" +
+            //"{'subBrand' : { $regex: /.*?0.*/, $options: 'i' } }" + TODO search on tags
             "{'name' : { $regex: /.*?0.*/, $options: 'i' } }" +
             "]}")
     Page<IdName> findAllByBrandOrSubBrandOrName(String search, Pageable pageable);
@@ -44,7 +42,7 @@ public interface CigarRepository extends MongoRepository<Cigar, String> {
     public class IdName {
         private String id;
         private String brand;
-        private String subBrand;
+        private List<String> tags;
         private String name;
 
         public String getId() {
@@ -63,12 +61,12 @@ public interface CigarRepository extends MongoRepository<Cigar, String> {
             this.brand = brand;
         }
 
-        public String getSubBrand() {
-            return subBrand;
+        public List<String> getTags() {
+            return tags;
         }
 
-        public void setSubBrand(String subBrand) {
-            this.subBrand = subBrand;
+        public void setTags(List<String> tags) {
+            this.tags = tags;
         }
 
         public String getName() {

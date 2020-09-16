@@ -1,5 +1,6 @@
 brand: 'Arturo Fuente'
-subBrand: 'Reserva Don Carlos'
+tags:
+  - 'Reserva Don Carlos'
 name: 'Don Carlos'
 strength: 'Medium_Full'
 binder:

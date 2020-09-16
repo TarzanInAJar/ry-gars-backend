@@ -5,11 +5,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.net.URL;
 import java.util.List;
 import java.util.Objects;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CigarDTO {
     private String id;
     private String brand;
-    private String subBrand;
+    private List<String> tags;
     private String name;
     private TobaccoDTO binder;
     private List<TobaccoDTO> filler;
@@ -33,12 +34,12 @@ public class CigarDTO {
         this.brand = brand;
     }
 
-    public String getSubBrand() {
-        return subBrand;
+    public List<String> getTags() {
+        return tags;
     }
 
-    public void setSubBrand(String subBrand) {
-        this.subBrand = subBrand;
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 
     public String getName() {
@@ -94,8 +95,9 @@ public class CigarDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CigarDTO cigarDTO = (CigarDTO) o;
-        return  Objects.equals(brand, cigarDTO.brand) &&
-                Objects.equals(subBrand, cigarDTO.subBrand) &&
+        return Objects.equals(id, cigarDTO.id) &&
+                Objects.equals(brand, cigarDTO.brand) &&
+                Objects.equals(tags, cigarDTO.tags) &&
                 Objects.equals(name, cigarDTO.name) &&
                 Objects.equals(binder, cigarDTO.binder) &&
                 Objects.equals(filler, cigarDTO.filler) &&
@@ -106,6 +108,6 @@ public class CigarDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand, subBrand, name, binder, filler, strength, sizes, images);
+        return Objects.hash(id, brand, tags, name, binder, filler, strength, sizes, images);
     }
 }

@@ -34,20 +34,17 @@ public class CigarDAO {
                 .map(this::getDTO);
     }
 
-    public CigarDTO getCigar(String brand, String subBrand, String name) {
-        Optional<Cigar> cigar = cigarRepository.findOne(brand, subBrand, name);
-        if (cigar.isPresent()) {
-            return getDTO(cigar.get());
-        }
-        return null;
+    public CigarDTO getCigar(String brand, String name) {
+        Optional<Cigar> cigar = cigarRepository.findOne(brand, name);
+        return cigar.map(this::getDTO).orElse(null);
     }
 
     public boolean exists(String id) {
         return cigarRepository.existsById(id);
     }
 
-    public boolean exists(String brand, String subBrand, String name) {
-        return cigarRepository.exists(brand, subBrand, name);
+    public boolean exists(String brand, String name) {
+        return cigarRepository.exists(brand, name);
     }
 
     public CigarDTO getCigarById(String id) {
@@ -61,7 +58,7 @@ public class CigarDAO {
     private CigarDTO getDTO(Cigar cigar) {
         CigarDTO dto = new CigarDTO();
         dto.setBrand(cigar.getBrand());
-        dto.setSubBrand(cigar.getSubBrand());
+        dto.setTags(cigar.getTags());
         dto.setName(cigar.getName());
         dto.setBinder(getDTO(cigar.getBinder()));
         dto.setFiller(cigar.getFiller().stream().map(this::getDTO).collect(toList()));
@@ -110,7 +107,7 @@ public class CigarDAO {
         entity.setFiller(cigar.getFiller().stream().map(this::getEntity).collect(toList()));
         entity.setName(cigar.getName());
         entity.setBrand(cigar.getBrand());
-        entity.setSubBrand(cigar.getSubBrand());
+        entity.setTags(cigar.getTags());
         entity.setStrength(STRENGTH.valueOf(cigar.getStrength().toUpperCase()));
         entity.setSizes(cigar.getSizes().stream().map(this::getEntity).collect(toList()));
         entity.setImages(cigar.getImages());

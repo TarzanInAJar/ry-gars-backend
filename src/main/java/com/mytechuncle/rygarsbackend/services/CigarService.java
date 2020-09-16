@@ -8,7 +8,7 @@ public interface CigarService {
     String addCigar(CigarDTO cigar);
     void updateCigar(CigarDTO cigar);
     Page<CigarDTO> getCigarsByBrand(Pageable pageable, String brand);
-    boolean exists(String brand, String subBrand, String name);
-    CigarDTO getCigar(String brand, String subBrand, String name);
+    boolean exists(String brand, String name);
+    CigarDTO getCigar(String brand, String name);
     CigarDTO getCigarById(String id);
 }

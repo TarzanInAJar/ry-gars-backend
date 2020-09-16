@@ -1,5 +1,6 @@
 brand: 'Arturo Fuente'
-subBrand: 'Gran AniverXario'
+tags:
+  - 'Gran AniverXario'
 name: 'Destino al Siglo'
 strength: 'Full'
 binder:

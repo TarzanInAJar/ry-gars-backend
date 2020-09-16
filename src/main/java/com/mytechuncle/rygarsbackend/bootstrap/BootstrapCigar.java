@@ -5,7 +5,7 @@ import java.util.List;
 
 public class BootstrapCigar {
     private String brand;
-    private String subBrand;
+    private List<String> tags;
     private String name;
     private BootstrapTobacco binder;
     private List<BootstrapTobacco> filler;
@@ -21,12 +21,12 @@ public class BootstrapCigar {
         this.brand = brand;
     }
 
-    public String getSubBrand() {
-        return subBrand;
+    public List<String> getTags() {
+        return tags;
     }
 
-    public void setSubBrand(String subBrand) {
-        this.subBrand = subBrand;
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 
     public String getName() {

@@ -1,5 +1,6 @@
 brand: 'Arturo Fuente'
-subBrand: 'Flor Fina'
+tags:
+  - 'Flor Fina'
 name: 'Casa Cuba'
 strength: 'Medium'
 binder:

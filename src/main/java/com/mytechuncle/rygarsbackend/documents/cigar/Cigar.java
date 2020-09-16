@@ -9,14 +9,14 @@ import java.net.URL;
 import java.util.List;
 
 @Document
-@CompoundIndex(unique = true, name = "unique_name_brand", def = "{'brand': 1, 'subBrand': 1, 'name': 1}")
+@CompoundIndex(unique = true, name = "unique_name_brand", def = "{'brand': 1, 'name': 1}")
 // TODO not created automatically, needs to be manually created
 public class Cigar {
     @Id
     private String id;
     @NonNull
     private String brand; // I.E. Arturo Fuente
-    private String subBrand; // I.E. Fuente Fuente
+    private List<String> tags; // I.E. Fuente Fuente
     @NonNull
     private String name; // I.E. Opus X The Lost City
     @NonNull
@@ -46,12 +46,12 @@ public class Cigar {
         this.brand = brand;
     }
 
-    public String getSubBrand() {
-        return subBrand;
+    public List<String> getTags() {
+        return tags;
     }
 
-    public void setSubBrand(String subBrand) {
-        this.subBrand = subBrand;
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 
     @NonNull

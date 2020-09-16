@@ -1,6 +1,7 @@
 brand: 'Arturo Fuente'
-subBrand: 'Rosada Gran Reserva'
 name: 'Magnum R'
+tags:
+  - 'Rosada Gran Reserva'
 strength: 'Medium'
 binder:
   region: 'Dominican Republic'

@@ -70,7 +70,7 @@ public class BootstrapCigarsService {
      */
     private BootstrapResult bootstrapCigar(BootstrapCigar cigar) throws IllegalArgumentException {
         CigarDTO bootstrapDTO = getDTO(cigar);
-        CigarDTO dto = cigarService.getCigar(cigar.getBrand(), cigar.getSubBrand(), cigar.getName());
+        CigarDTO dto = cigarService.getCigar(cigar.getBrand(), cigar.getName());
         if (dto == null) {
             cigarService.addCigar(bootstrapDTO);
             return BootstrapResult.created;
@@ -91,7 +91,7 @@ public class BootstrapCigarsService {
         dto.setStrength(cigar.getStrength());
         dto.setBrand(cigar.getBrand());
         dto.setName(cigar.getName());
-        dto.setSubBrand(cigar.getSubBrand());
+        dto.setTags(cigar.getTags());
         dto.setImages(cigar.getImages());
 
         dto.setBinder(new TobaccoDTO(

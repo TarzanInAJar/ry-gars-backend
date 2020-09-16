@@ -1,5 +1,6 @@
 brand: 'Arturo Fuente'
-subBrand: 'Gran Reserva'
+tags:
+  - 'Gran Reserva'
 name: 'Chateau Fuente'
 strength: 'Medium'
 binder:
