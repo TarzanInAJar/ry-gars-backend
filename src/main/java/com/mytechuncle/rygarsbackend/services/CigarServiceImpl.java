@@ -55,13 +55,13 @@ public class CigarServiceImpl implements CigarService {
 
     private void validCigar(CigarDTO cigar) {
         if (cigar.getStrength() == null && cigar.getSizes().stream().anyMatch(size -> size.getStrength() == null)) {
-            throw new IllegalArgumentException("Can't update - size exists with no strength!");
+            throw new IllegalArgumentException("Can't save " + cigar.getBrandAndName() + " - size exists with no strength!");
         } else if (cigar.getFiller() == null && cigar.getSizes().stream().anyMatch(size -> size.getFiller() == null)) {
-            throw new IllegalArgumentException("Can't update - size exists with no filler!");
+            throw new IllegalArgumentException("Can't save " + cigar.getBrandAndName() + " - size exists with no filler!");
         } else if (cigar.getBinder() == null && cigar.getSizes().stream().anyMatch(size -> size.getBinder() == null)) {
-            throw new IllegalArgumentException("Can't update - size exists with no binder!");
+            throw new IllegalArgumentException("Can't save " + cigar.getBrandAndName() + " - size exists with no binder!");
         } else if (cigar.getWrappers() == null && cigar.getSizes().stream().anyMatch(size -> size.getWrappers() == null)) {
-            throw new IllegalArgumentException("Can't update - size exists with no wrappers!");
+            throw new IllegalArgumentException("Can't save " + cigar.getBrandAndName() + " - size exists with no wrappers!");
         }
     }
 }

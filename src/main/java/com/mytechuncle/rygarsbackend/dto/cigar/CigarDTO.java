@@ -119,4 +119,8 @@ public class CigarDTO {
     public int hashCode() {
         return Objects.hash(brand, tags, name, binder, filler, wrappers, strength, sizes, images);
     }
+
+    public String getBrandAndName() {
+        return brand + " " + name;
+    }
 }
