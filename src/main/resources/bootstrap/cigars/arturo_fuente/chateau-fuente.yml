@@ -1,0 +1,104 @@
+brand: 'Arturo Fuente'
+subBrand: 'Gran Reserva'
+name: 'Chateau Fuente'
+strength: 'Medium'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'Royal Salute'
+    ringGauge: 54
+    length: 7.625
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'King T Rosado'
+    ringGauge: 49
+    length: 7
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'King T'
+    ringGauge: 49
+    length: 7
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+  -
+    sizeName: 'Double Chateau Fuente'
+    ringGauge: 50
+    length: 6.75
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Pyramid'
+    ringGauge: 52
+    length: 6
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+  -
+    sizeName: 'King B'
+    ringGauge: 55
+    length: 6
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Belicoso'
+    ringGauge: 52
+    length: 5.75
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Queen B'
+    ringGauge: 52
+    length: 5.5
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Chateau Fuente'
+    ringGauge: 50
+    length: 4.5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'

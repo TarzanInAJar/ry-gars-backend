@@ -1,0 +1,78 @@
+brand: 'Arturo Fuente'
+subBrand: 'Reserva Don Carlos'
+name: 'Don Carlos'
+strength: 'Medium_Full'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'Presidente'
+    ringGauge: 50
+    length: 6.5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+  -
+    sizeName: 'No. 2'
+    ringGauge: 44
+    ringGauge2: 55
+    length: 5.875
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+  -
+    sizeName: 'Eye of the Shark'
+    ringGauge: 52
+    length: 5.25
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+  -
+    sizeName: 'Double Robusto'
+    ringGauge: 52
+    length: 5.75
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+  -
+    sizeName: 'No. 3'
+    ringGauge: 44
+    length: 5.5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+  -
+    sizeName: 'No. 4'
+    ringGauge: 43
+    length: 5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+  -
+    sizeName: 'Robusto'
+    ringGauge: 50
+    length: 5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+
+

@@ -1,0 +1,50 @@
+brand: 'Davidoff'
+name: 'Millenium'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+strength: 'Medium_Full'
+sizes:
+  -
+    sizeName: "Petit Corona"
+    alternativeSizeName: 'Petite Corona'
+    ringGauge: 41
+    length: 4.5
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Piramide"
+    ringGauge: 52
+    length: 6.125
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Robusto"
+    ringGauge: 50
+    length: 5.25
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Short Robusto"
+    ringGauge: 52
+    length: 4.25
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Toro"
+    ringGauge: 50
+    length: 6
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'

@@ -1,0 +1,52 @@
+brand: 'Davidoff'
+name: 'Grand Cru'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+strength: 'Mild_Medium'
+sizes:
+  -
+    sizeName: "No. 2"
+    alternativeSizeName: 'Corona'
+    ringGauge: 43
+    length: 5.625
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuador'
+  -
+    sizeName: "No. 3"
+    alternativeSizeName: 'Corona'
+    ringGauge: 43
+    length: 5
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuador'
+  -
+    sizeName: "No. 5"
+    alternativeSizeName: 'Petit Corona'
+    ringGauge: 41
+    length: 4
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuador'
+  -
+    sizeName: "Robusto"
+    ringGauge: 52
+    length: 5.25
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuador'
+  -
+    sizeName: "Toro"
+    ringGauge: 54
+    length: 6
+    wrappers:
+      -
+        shade: 'Connecticut'
+        region: 'Ecuador'

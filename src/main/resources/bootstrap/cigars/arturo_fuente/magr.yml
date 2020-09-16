@@ -1,0 +1,60 @@
+brand: 'Arturo Fuente'
+subBrand: 'Rosada Gran Reserva'
+name: 'Magnum R'
+strength: 'Medium'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'Vitola 44'
+    ringGauge: 44
+    length: 4.875
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Vitola 52'
+    ringGauge: 52
+    length: 5
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Vitola 54'
+    ringGauge: 54
+    length: 6.5
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Vitola 56'
+    ringGauge: 56
+    length: 5.625
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Vitola 58'
+    ringGauge: 58
+    length: 5.25
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Super 60'
+    ringGauge: 60
+    length: 6
+    wrappers:
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'

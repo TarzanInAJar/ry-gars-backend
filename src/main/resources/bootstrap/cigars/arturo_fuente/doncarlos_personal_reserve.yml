@@ -1,0 +1,23 @@
+brand: 'Arturo Fuente'
+subBrand: 'Reserva Don Carlos'
+name: 'Don Carlos Personal Reserve'
+strength: 'Medium_Full'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'Robusto'
+    ringGauge: 50
+    length: 5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+
+

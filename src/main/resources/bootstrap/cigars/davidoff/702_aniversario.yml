@@ -1,0 +1,54 @@
+brand: 'Davidoff'
+name: '702 Series Aniversario'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+strength: 'Full'
+sizes:
+  -
+    sizeName: "No. 3"
+    alternativeSizeName: 'Toro'
+    ringGauge: 50
+    length: 6
+    wrappers:
+      -
+        shade: 'Habano'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Double R"
+    alternativeSizeName: 'Double Corona'
+    ringGauge: 50
+    length: 7.5
+    wrappers:
+      -
+        shade: 'Habano'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Entreacto"
+    alternativeSizeName: 'Short Corona'
+    ringGauge: 43
+    length: 3.5
+    wrappers:
+      -
+        shade: 'Habano'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Special R"
+    alternativeSizeName: 'Robusto'
+    ringGauge: 50
+    length: 4.875
+    wrappers:
+      -
+        shade: 'Habano'
+        region: 'Ecuadorian'
+  -
+    sizeName: "Special T"
+    alternativeSizeName: 'Torpedo'
+    ringGauge: 52
+    length: 6
+    wrappers:
+      -
+        shade: 'Habano'
+        region: 'Ecuadorian'

@@ -1,0 +1,128 @@
+brand: 'Arturo Fuente'
+name: 'Gran Reserva'
+strength: 'Medium'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'Canones'
+    ringGauge: 52
+    length: 8.5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+  -
+    sizeName: 'Churchill'
+    ringGauge: 48
+    length: 7.25
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+      -
+        shade: 'Candela'
+      -
+        shade: "Seleccion D'oro"
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Seleccion Privada No. 1'
+    ringGauge: 44
+    length: 6.75
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+      -
+        shade: 'Candela'
+  -
+    sizeName: 'Corona Imperial'
+    ringGauge: 46
+    length: 6.5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+      -
+        shade: "Seleccion D'oro"
+        region: 'Ecuadorian'
+  -
+    sizeName: 'Spanish Lonsdale'
+    ringGauge: 42
+    length: 6.5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+      -
+        shade: 'Candela'
+  -
+    sizeName: 'Flor Fina 8-5-8'
+    ringGauge: 47
+    length: 6
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+      -
+        shade: 'Sun Grown'
+        region: 'Ecuadorian'
+      -
+        shade: 'Candela'
+  -
+    sizeName: 'Corona'
+    ringGauge: 45
+    length: 5.25
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+  -
+    sizeName: 'Petite Corona'
+    ringGauge: 38
+    length: 5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+  -
+    sizeName: 'Rothschilds'
+    ringGauge: 50
+    length: 4.5
+    wrappers:
+      -
+        shade: 'Natural'
+        region: 'African'
+        name: 'African Cameroon'
+      -
+        shade: 'Maduro'
+
