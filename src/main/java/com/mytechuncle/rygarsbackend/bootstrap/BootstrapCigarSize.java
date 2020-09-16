@@ -11,6 +11,9 @@ public class BootstrapCigarSize {
     private Float length;
     private List<BootstrapWrapper> wrappers;
     private List<URL> images;
+    private BootstrapTobacco binder;
+    private List<BootstrapTobacco> filler;
+    private String strength;
 
     public String getSizeName() {
         return sizeName;
@@ -66,5 +69,29 @@ public class BootstrapCigarSize {
 
     public void setImages(List<URL> images) {
         this.images = images;
+    }
+
+    public BootstrapTobacco getBinder() {
+        return binder;
+    }
+
+    public void setBinder(BootstrapTobacco binder) {
+        this.binder = binder;
+    }
+
+    public List<BootstrapTobacco> getFiller() {
+        return filler;
+    }
+
+    public void setFiller(List<BootstrapTobacco> filler) {
+        this.filler = filler;
+    }
+
+    public String getStrength() {
+        return strength;
+    }
+
+    public void setStrength(String strength) {
+        this.strength = strength;
     }
 }

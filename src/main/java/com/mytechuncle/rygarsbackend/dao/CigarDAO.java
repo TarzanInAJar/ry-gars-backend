@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 import static java.util.stream.Collectors.toList;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @Service
 public class CigarDAO {
@@ -53,6 +54,9 @@ public class CigarDAO {
     }
 
     private CigarDTO getDTO(Cigar cigar) {
+        if (cigar == null) {
+            return null;
+        }
         CigarDTO dto = new CigarDTO();
         dto.setBrand(cigar.getBrand());
         dto.setTags(cigar.getTags());
@@ -67,6 +71,9 @@ public class CigarDAO {
     }
 
     private CigarSizeDTO getDTO(CigarSize cigarSize) {
+        if (cigarSize == null) {
+            return null;
+        }
         CigarSizeDTO dto = new CigarSizeDTO();
         dto.setSizeName(cigarSize.getSizeName());
         dto.setLength(cigarSize.getLength());
@@ -74,10 +81,18 @@ public class CigarDAO {
         dto.setRingGauge2(cigarSize.getRingGauge2());
         dto.setAlternativeSizeName(cigarSize.getAlternativeSizeName());
         dto.setWrappers(cigarSize.getWrappers().stream().map(this::getDTO).collect(toList()));
+        dto.setBinder(getDTO(cigarSize.getBinder()));
+        dto.setFiller(cigarSize.getFiller() != null ?
+                cigarSize.getFiller().stream().map(this::getDTO).collect(toList()) : null);
+        dto.setStrength(cigarSize.getStrength() != null ?
+                WordUtils.capitalizeFully(cigarSize.getStrength().name()) : null);
         return dto;
     }
 
     private WrapperDTO getDTO(Wrapper wrapper) {
+        if (wrapper == null) {
+            return null;
+        }
         WrapperDTO dto = new WrapperDTO();
         dto.setRegion(wrapper.getRegion());
         dto.setShade(wrapper.getShade());
@@ -86,6 +101,9 @@ public class CigarDAO {
     }
 
     private TobaccoDTO getDTO(Tobacco tobacco) {
+        if (tobacco == null) {
+            return null;
+        }
         TobaccoDTO tobaccoDTO = new TobaccoDTO();
         tobaccoDTO.setRegion(tobacco.getRegion());
         tobaccoDTO.setType(tobacco.getType());
@@ -94,6 +112,9 @@ public class CigarDAO {
     }
 
     private Cigar getEntity(CigarDTO cigar) {
+        if (cigar == null) {
+            return null;
+        }
         Cigar entity;
         if (cigar.getId() != null) {
             entity = cigarRepository.findById(cigar.getId()).orElseThrow(() -> new IllegalArgumentException("No cigar exists for id " + cigar.getId()));
@@ -112,6 +133,9 @@ public class CigarDAO {
     }
 
     private CigarSize getEntity(CigarSizeDTO size) {
+        if (size == null) {
+            return null;
+        }
         CigarSize entity = new CigarSize();
         entity.setSizeName(size.getSizeName());
         entity.setAlternativeSizeName(size.getAlternativeSizeName());
@@ -121,10 +145,18 @@ public class CigarDAO {
         entity.setImages(size.getImages());
         entity.setWrappers(size.getWrappers().stream().map(this::getEntity).collect(toList()));
         entity.setImages(size.getImages());
+        entity.setBinder(getEntity(size.getBinder()));
+        entity.setFiller(size.getFiller() != null ?
+                size.getFiller().stream().map(this::getEntity).collect(toList()) : null);
+        entity.setStrength(isNotBlank(size.getStrength()) ?
+                STRENGTH.valueOf(size.getStrength().toUpperCase()) : null);
         return entity;
     }
 
     private Wrapper getEntity(WrapperDTO wrapper) {
+        if (wrapper == null) {
+            return null;
+        }
         Wrapper entity = new Wrapper();
         entity.setRegion(wrapper.getRegion());
         entity.setShade(wrapper.getShade());
@@ -133,6 +165,9 @@ public class CigarDAO {
     }
 
     private Tobacco getEntity(TobaccoDTO tobacco) {
+        if (tobacco == null) {
+            return null;
+        }
         Tobacco entity = new Tobacco();
         entity.setRegion(tobacco.getRegion());
         entity.setType(tobacco.getType());

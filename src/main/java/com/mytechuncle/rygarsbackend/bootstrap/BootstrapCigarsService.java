@@ -12,7 +12,10 @@ import org.springframework.stereotype.Service;
 import org.yaml.snakeyaml.Yaml;
 
 import javax.annotation.PostConstruct;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -116,6 +119,18 @@ public class BootstrapCigarsService {
                                 return wrapperDTO;
                             })
                             .collect(toList()));
+                    sizeDTO.setBinder(size.getBinder() != null ? new TobaccoDTO(
+                            size.getBinder().getRegion(),
+                            size.getBinder().getType(),
+                            size.getBinder().getYear()
+                    ) : null);
+                    sizeDTO.setFiller(size.getFiller() != null ? size.getFiller().stream()
+                            .map(tobacco -> new TobaccoDTO(
+                                    tobacco.getRegion(),
+                                    tobacco.getType(),
+                                    tobacco.getYear()
+                            )).collect(toList()) : null);
+                    sizeDTO.setStrength(size.getStrength());
                     return sizeDTO;
                 })
                 .collect(toList()));

@@ -15,6 +15,9 @@ public class CigarSizeDTO {
     private Float length;
     private List<WrapperDTO> wrappers;
     private List<URL> images;
+    private TobaccoDTO binder;
+    private List<TobaccoDTO> filler;
+    private String strength;
 
     public String getSizeName() {
         return sizeName;
@@ -72,22 +75,49 @@ public class CigarSizeDTO {
         this.images = images;
     }
 
+    public TobaccoDTO getBinder() {
+        return binder;
+    }
+
+    public void setBinder(TobaccoDTO binder) {
+        this.binder = binder;
+    }
+
+    public List<TobaccoDTO> getFiller() {
+        return filler;
+    }
+
+    public void setFiller(List<TobaccoDTO> filler) {
+        this.filler = filler;
+    }
+
+    public String getStrength() {
+        return strength;
+    }
+
+    public void setStrength(String strength) {
+        this.strength = strength;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CigarSizeDTO that = (CigarSizeDTO) o;
-        return Objects.equals(sizeName, that.sizeName) &&
-                Objects.equals(alternativeSizeName, that.alternativeSizeName) &&
-                Objects.equals(ringGauge, that.ringGauge) &&
-                Objects.equals(ringGauge2, that.ringGauge2) &&
-                Objects.equals(length, that.length) &&
-                Objects.equals(wrappers, that.wrappers) &&
-                Objects.equals(images, that.images);
+        CigarSizeDTO sizeDTO = (CigarSizeDTO) o;
+        return Objects.equals(sizeName, sizeDTO.sizeName) &&
+                Objects.equals(alternativeSizeName, sizeDTO.alternativeSizeName) &&
+                Objects.equals(ringGauge, sizeDTO.ringGauge) &&
+                Objects.equals(ringGauge2, sizeDTO.ringGauge2) &&
+                Objects.equals(length, sizeDTO.length) &&
+                Objects.equals(wrappers, sizeDTO.wrappers) &&
+                Objects.equals(images, sizeDTO.images) &&
+                Objects.equals(binder, sizeDTO.binder) &&
+                Objects.equals(filler, sizeDTO.filler) &&
+                Objects.equals(strength, sizeDTO.strength);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sizeName, alternativeSizeName, ringGauge, ringGauge2, length, wrappers, images);
+        return Objects.hash(sizeName, alternativeSizeName, ringGauge, ringGauge2, length, wrappers, images, binder, filler, strength);
     }
 }
