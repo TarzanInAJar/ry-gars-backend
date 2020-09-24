@@ -1,0 +1,44 @@
+brand: 'Davidoff'
+name: 'Anniversario'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'EMS'
+    region: 'Dominican Republic'
+strength: 'Medium'
+sizes:
+  -
+    sizeName: "Double 'R'"
+    alternativeSizeName: 'Double Corona'
+    ringGauge: 50
+    length: 7.5
+  -
+    sizeName: "Entreacto"
+    alternativeSizeName: 'Short Corona'
+    ringGauge: 43
+    length: 3.5
+  -
+    sizeName: "No. 3"
+    alternativeSizeName: 'Toro'
+    ringGauge: 50
+    length: 6
+  -
+    sizeName: "Short Perfecto"
+    ringGauge: 52
+    length: 4.75
+  -
+    sizeName: "Special 'R'"
+    alternativeSizeName: 'Robusto'
+    ringGauge: 50
+    length: 5
+  -
+    sizeName: "Special 'T'"
+    alternativeSizeName: 'Torpedo'
+    ringGauge: 52
+    length: 6
+
+

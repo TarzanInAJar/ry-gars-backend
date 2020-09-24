@@ -1,15 +1,16 @@
-package com.mytechuncle.rygarsbackend.documents.cigar;
+package com.mytechuncle.rygarsbackend.bootstrap;
 
-import com.mongodb.lang.NonNull;
-
-public class Wrapper {
-    @NonNull
+public class BootstrapWrapper {
     private String shade;
     private String region;
     private String name;
 
-    public Wrapper() {
-        // default constructor
+    public String getShade() {
+        return shade;
+    }
+
+    public void setShade(String shade) {
+        this.shade = shade;
     }
 
     public String getRegion() {
@@ -18,14 +19,6 @@ public class Wrapper {
 
     public void setRegion(String region) {
         this.region = region;
-    }
-
-    public String getShade() {
-        return shade;
-    }
-
-    public void setShade(String shade) {
-        this.shade = shade;
     }
 
     public String getName() {

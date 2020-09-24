@@ -1,11 +1,14 @@
 package com.mytechuncle.rygarsbackend.dto.cigar;
 
-import java.util.Optional;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.Objects;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TobaccoDTO {
     private String region; // I.E. Dominican
-    private Optional<String> type;  // criollo
-    private Optional<Integer> year; // I.E. 1998
+    private String type;  // criollo
+    private Integer year; // I.E. 1998
 
     public TobaccoDTO() {
         // default constructor
@@ -13,25 +16,18 @@ public class TobaccoDTO {
 
     public TobaccoDTO(String region) {
         this.region = region;
-        this.type = Optional.empty();
-        this.year = Optional.empty();
     }
 
     public TobaccoDTO(String region, String type) {
         this.region = region;
-        this.type = Optional.of(type);
     }
 
     public TobaccoDTO(String region, Integer year) {
         this.region = region;
-        this.type = Optional.empty();
-        this.year = Optional.of(year);
     }
 
     public TobaccoDTO(String region, String type, Integer year) {
         this.region = region;
-        this.type = Optional.of(type);
-        this.year = Optional.of(year);
     }
 
     public String getRegion() {
@@ -42,19 +38,34 @@ public class TobaccoDTO {
         this.region = region;
     }
 
-    public Optional<String> getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Optional<String> type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    public Optional<Integer> getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(Optional<Integer> year) {
+    public void setYear(Integer year) {
         this.year = year;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TobaccoDTO that = (TobaccoDTO) o;
+        return Objects.equals(region, that.region) &&
+                Objects.equals(type, that.type) &&
+                Objects.equals(year, that.year);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(region, type, year);
     }
 }

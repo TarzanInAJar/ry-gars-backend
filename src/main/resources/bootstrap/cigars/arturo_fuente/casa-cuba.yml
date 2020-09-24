@@ -1,0 +1,37 @@
+brand: 'Arturo Fuente'
+tags:
+  - 'Flor Fina'
+name: 'Casa Cuba'
+strength: 'Medium'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Habano'
+    region: 'Ecuadorian'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'Divine Inspiration'
+    ringGauge: 47
+    length: 6.125
+  -
+    sizeName: 'Doble Sies'
+    ringGauge: 52
+    length: 6
+  -
+    sizeName: 'Doble Tres'
+    ringGauge: 44
+    length: 5.5
+  -
+    sizeName: 'Doble Cinco'
+    ringGauge: 50
+    length: 5
+  -
+    sizeName: 'Doble Quatro'
+    ringGauge: 54
+    length: 4.5

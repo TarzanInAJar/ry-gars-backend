@@ -1,0 +1,23 @@
+brand: 'Davidoff'
+name: '702 Series Signature'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Habano'
+    region: 'Ecuadorian'
+strength: 'Medium'
+sizes:
+  -
+    sizeName: "2000"
+    alternativeSizeName: 'Corona'
+    ringGauge: 43
+    length: 5.0625
+  -
+    sizeName: "No. 2"
+    alternativeSizeName: 'Panetela'
+    ringGauge: 38
+    length: 6

@@ -1,0 +1,33 @@
+brand: 'Arturo Fuente'
+tags:
+  - 'Gran AniverXario'
+name: 'Destino al Siglo'
+strength: 'Full'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Dominican'
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: "De Passion"
+    ringGauge: 50
+    length: 6.75
+  -
+    sizeName: "De Familia"
+    ringGauge: 47
+    length: 6.125
+  -
+    sizeName: "De Amor"
+    ringGauge: 52
+    length: 5.25
+  -
+    sizeName: "De Amistad"
+    ringGauge: 50
+    length: 5

@@ -1,0 +1,27 @@
+brand: 'Davidoff'
+name: 'Winston Churchill Late Hour'
+binder:
+  region: 'Mexican'
+filler:
+  -
+    region: 'Dominican Republic'
+  -
+    region: 'Nicaraguan'
+wrappers:
+  -
+    shade: 'Habano Marron Oscuro'
+    region: 'Ecuadorian'
+strength: 'Full'
+sizes:
+  -
+    sizeName: "Churchill"
+    ringGauge: 48
+    length: 7
+  -
+    sizeName: "Robusto"
+    ringGauge: 52
+    length: 5
+  -
+    sizeName: "Toro"
+    ringGauge: 54
+    length: 6

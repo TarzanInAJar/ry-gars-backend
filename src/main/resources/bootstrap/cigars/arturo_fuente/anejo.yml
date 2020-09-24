@@ -1,0 +1,51 @@
+brand: 'Arturo Fuente'
+name: 'Anejo'
+strength: 'Full'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Maduro'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'No. 49'
+    ringGauge: 49
+    length: 7.625
+  -
+    sizeName: 'No. 48'
+    ringGauge: 48
+    length: 7
+  -
+    sizeName: 'No. 49'
+    ringGauge: 49
+    length: 7.625
+  -
+    sizeName: 'No. 888'
+    ringGauge: 44
+    length: 6.625
+  -
+    sizeName: 'No. 60'
+    ringGauge: 48
+    length: 6.25
+  -
+    sizeName: 'No. 55'
+    ringGauge: 55
+    length: 6
+  -
+    sizeName: 'No. 77 Shark'
+    ringGauge: 50
+    ringGauge2: 64
+    length: 5.875
+  -
+    sizeName: 'No. 46'
+    ringGauge: 46
+    length: 5.625
+  -
+    sizeName: 'No. 50'
+    ringGauge: 50
+    length: 5.25

@@ -5,33 +5,28 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.net.URL;
 import java.util.List;
 
 @Document
-@CompoundIndex(unique = true, name = "unique_name_brand_size", def = "{'brand': 1, 'subBrand': 1, 'name': 1, 'sizeName': 1}")
+@CompoundIndex(unique = true, name = "unique_name_brand", def = "{'brand': 1, 'name': 1}")
 // TODO not created automatically, needs to be manually created
 public class Cigar {
     @Id
     private String id;
     @NonNull
     private String brand; // I.E. Arturo Fuente
-    private String subBrand; // I.E. Fuente Fuente
+    private List<String> tags; // I.E. Fuente Fuente
     @NonNull
     private String name; // I.E. Opus X The Lost City
-    @NonNull
-    private String sizeName; // I.E. Robustu
-    @NonNull
-    private Integer ringGauge; // I.E. 50
-    @NonNull
-    private Float length; // I.E. 5.25
-    @NonNull
-    private Wrapper wrapper;
-    @NonNull
     private Tobacco binder;
     @NonNull
-    private List<Tobacco> filler;
-    @NonNull
+    private List<Tobacco> filler; // todo pluralize
+    private List<Wrapper> wrappers;
     private STRENGTH strength;
+    @NonNull
+    private List<CigarSize> sizes;
+    private List<URL> images;
 
     public String getId() {
         return id;
@@ -41,60 +36,30 @@ public class Cigar {
         this.id = id;
     }
 
+    @NonNull
     public String getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(@NonNull String brand) {
         this.brand = brand;
     }
 
-    public String getSubBrand() {
-        return subBrand;
+    public List<String> getTags() {
+        return tags;
     }
 
-    public void setSubBrand(String subBrand) {
-        this.subBrand = subBrand;
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 
+    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(@NonNull String name) {
         this.name = name;
-    }
-
-    public String getSizeName() {
-        return sizeName;
-    }
-
-    public void setSizeName(String sizeName) {
-        this.sizeName = sizeName;
-    }
-
-    public Integer getRingGauge() {
-        return ringGauge;
-    }
-
-    public void setRingGauge(Integer ringGauge) {
-        this.ringGauge = ringGauge;
-    }
-
-    public Float getLength() {
-        return length;
-    }
-
-    public void setLength(Float length) {
-        this.length = length;
-    }
-
-    public Wrapper getWrapper() {
-        return wrapper;
-    }
-
-    public void setWrapper(Wrapper wrapper) {
-        this.wrapper = wrapper;
     }
 
     public Tobacco getBinder() {
@@ -113,11 +78,36 @@ public class Cigar {
         this.filler = filler;
     }
 
+    public List<Wrapper> getWrappers() {
+        return wrappers;
+    }
+
+    public void setWrappers(List<Wrapper> wrappers) {
+        this.wrappers = wrappers;
+    }
+
     public STRENGTH getStrength() {
         return strength;
     }
 
     public void setStrength(STRENGTH strength) {
         this.strength = strength;
+    }
+
+    public List<URL> getImages() {
+        return images;
+    }
+
+    public void setImages(List<URL> images) {
+        this.images = images;
+    }
+
+    @NonNull
+    public List<CigarSize> getSizes() {
+        return sizes;
+    }
+
+    public void setSizes(@NonNull List<CigarSize> sizes) {
+        this.sizes = sizes;
     }
 }

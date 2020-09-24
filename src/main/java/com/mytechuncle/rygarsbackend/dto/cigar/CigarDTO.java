@@ -1,19 +1,23 @@
 package com.mytechuncle.rygarsbackend.dto.cigar;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.net.URL;
+import java.util.List;
+import java.util.Objects;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CigarDTO {
     private String id;
     private String brand;
-    private String subBrand;
+    private List<String> tags;
     private String name;
-    private String sizeName;
-    private Integer ringGauge; // I.E. 50
-    private Float length; // I.E. 5.25
-    private WrapperDTO wrapper;
     private TobaccoDTO binder;
     private List<TobaccoDTO> filler;
+    private List<WrapperDTO> wrappers;
     private String strength;
+    private List<CigarSizeDTO> sizes;
+    private List<URL> images;
 
     public String getId() {
         return id;
@@ -31,12 +35,12 @@ public class CigarDTO {
         this.brand = brand;
     }
 
-    public String getSubBrand() {
-        return subBrand;
+    public List<String> getTags() {
+        return tags;
     }
 
-    public void setSubBrand(String subBrand) {
-        this.subBrand = subBrand;
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 
     public String getName() {
@@ -45,38 +49,6 @@ public class CigarDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getSizeName() {
-        return sizeName;
-    }
-
-    public void setSizeName(String sizeName) {
-        this.sizeName = sizeName;
-    }
-
-    public Integer getRingGauge() {
-        return ringGauge;
-    }
-
-    public void setRingGauge(Integer ringGauge) {
-        this.ringGauge = ringGauge;
-    }
-
-    public Float getLength() {
-        return length;
-    }
-
-    public void setLength(Float length) {
-        this.length = length;
-    }
-
-    public WrapperDTO getWrapper() {
-        return wrapper;
-    }
-
-    public void setWrapper(WrapperDTO wrapper) {
-        this.wrapper = wrapper;
     }
 
     public TobaccoDTO getBinder() {
@@ -95,11 +67,60 @@ public class CigarDTO {
         this.filler = filler;
     }
 
+    public List<WrapperDTO> getWrappers() {
+        return wrappers;
+    }
+
+    public void setWrappers(List<WrapperDTO> wrappers) {
+        this.wrappers = wrappers;
+    }
+
     public String getStrength() {
         return strength;
     }
 
     public void setStrength(String strength) {
         this.strength = strength;
+    }
+
+    public List<CigarSizeDTO> getSizes() {
+        return sizes;
+    }
+
+    public void setSizes(List<CigarSizeDTO> sizes) {
+        this.sizes = sizes;
+    }
+
+    public List<URL> getImages() {
+        return images;
+    }
+
+    public void setImages(List<URL> images) {
+        this.images = images;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CigarDTO cigarDTO = (CigarDTO) o;
+        return  Objects.equals(brand, cigarDTO.brand) &&
+                Objects.equals(tags, cigarDTO.tags) &&
+                Objects.equals(name, cigarDTO.name) &&
+                Objects.equals(binder, cigarDTO.binder) &&
+                Objects.equals(filler, cigarDTO.filler) &&
+                Objects.equals(wrappers, cigarDTO.wrappers) &&
+                Objects.equals(strength, cigarDTO.strength) &&
+                Objects.equals(sizes, cigarDTO.sizes) &&
+                Objects.equals(images, cigarDTO.images);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, tags, name, binder, filler, wrappers, strength, sizes, images);
+    }
+
+    public String getBrandAndName() {
+        return brand + " " + name;
     }
 }

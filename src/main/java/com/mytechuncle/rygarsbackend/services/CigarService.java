@@ -1,11 +1,14 @@
 package com.mytechuncle.rygarsbackend.services;
 
 import com.mytechuncle.rygarsbackend.dto.cigar.CigarDTO;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface CigarService {
     String addCigar(CigarDTO cigar);
-
-    List<CigarDTO> getCigarsByBrand(String brand);
+    void updateCigar(CigarDTO cigar);
+    Page<CigarDTO> getCigarsByBrand(Pageable pageable, String brand);
+    boolean exists(String brand, String name);
+    CigarDTO getCigar(String brand, String name);
+    CigarDTO getCigarById(String id);
 }

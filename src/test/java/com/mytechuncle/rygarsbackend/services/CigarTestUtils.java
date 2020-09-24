@@ -13,7 +13,7 @@ public class CigarTestUtils {
     public static CigarDTO getHemingwaySignature() {
         CigarDTO cigar = new CigarDTO();
         cigar.setBrand("Arturo Fuente");
-        cigar.setSubBrand("Gran Reserva");
+        cigar.setTags(asList("Gran Reserva"));
         cigar.setName("Hemingway Signature");
         cigar.setSizeName("Figurado");
         cigar.setRingGauge(47);
@@ -21,7 +21,7 @@ public class CigarTestUtils {
         cigar.setWrapper(new WrapperDTO("African", "Cameroon"));
         cigar.setBinder(new TobaccoDTO("Dominican"));
         cigar.setFiller(asList(new TobaccoDTO("Dominican")));
-        cigar.setStrength(WordUtils.capitalizeFully(STRENGTH.MEDIUM.toString()));
+        cigar.setStrength(WordUtils.capitalizeFully(STRENGTH.MEDIUM.toString(), '_'));
         return cigar;
     }
 
@@ -29,14 +29,14 @@ public class CigarTestUtils {
         CigarDTO cigar = new CigarDTO();
         cigar.setBrand("Arturo Fuente");
         cigar.setSubBrand("Gran Reserva");
-        cigar.setName("Hemingway Signature");
+        cigar.setName("Hemingway Short Story");
         cigar.setSizeName("Perfecto");
         cigar.setRingGauge(48);
         cigar.setLength(4f);
         cigar.setWrapper(new WrapperDTO("African", "Cameroon"));
         cigar.setBinder(new TobaccoDTO("Dominican"));
         cigar.setFiller(asList(new TobaccoDTO("Dominican")));
-        cigar.setStrength(WordUtils.capitalizeFully(STRENGTH.MEDIUM.toString()));
+        cigar.setStrength(WordUtils.capitalizeFully(STRENGTH.MEDIUM.toString(), '_'));
         return cigar;
     }
 }

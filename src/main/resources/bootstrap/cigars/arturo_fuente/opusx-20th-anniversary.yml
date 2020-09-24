@@ -1,0 +1,31 @@
+brand: 'Arturo Fuente'
+name: "Fuente Fuente OpusX 20th Anniversary"
+strength: 'Medium'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Dominican'
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: "God's Whisper"
+    ringGauge: 56
+    length: 6.5
+  -
+    sizeName: 'Power of the Dream'
+    ringGauge: 52
+    length: 6.375
+  -
+    sizeName: 'Father & Son'
+    ringGauge: 49
+    length: 6.25
+  -
+    sizeName: 'Believe'
+    ringGauge: 52
+    length: 5.75

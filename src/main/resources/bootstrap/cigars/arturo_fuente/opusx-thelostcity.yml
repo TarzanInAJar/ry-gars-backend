@@ -1,0 +1,35 @@
+brand: 'Arturo Fuente'
+name: "Fuente Fuente OpusX The Lost City"
+strength: 'Full'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Dominican'
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'Robusto'
+    ringGauge: 50
+    length: 5.25
+  -
+    sizeName: 'Toro'
+    ringGauge: 48
+    length: 6.75
+  -
+    sizeName: 'Piramide'
+    ringGauge: 52
+    length: 6.375
+  -
+    sizeName: 'Double Robusto'
+    ringGauge: 52
+    length: 5.75
+  -
+    sizeName: 'Lancero'
+    ringGauge: 38
+    length: 7.5

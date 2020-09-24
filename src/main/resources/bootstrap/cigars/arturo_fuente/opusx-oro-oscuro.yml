@@ -1,0 +1,35 @@
+brand: 'Arturo Fuente'
+name: 'Fuente Fuente OpusX Oro Oscuro'
+strength: 'Full'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Dominican'
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: "Reserva D'Chateau"
+    ringGauge: 48
+    length: 7
+  -
+    sizeName: 'Perfecxion X'
+    ringGauge: 48
+    length: 6.25
+  -
+    sizeName: 'Fuente Fuente'
+    ringGauge: 46
+    length: 5.625
+  -
+    sizeName: 'Robusto'
+    ringGauge: 50
+    length: 5.25
+  -
+    sizeName: 'Perfecxion No. 4'
+    ringGauge: 42
+    length: 5.25

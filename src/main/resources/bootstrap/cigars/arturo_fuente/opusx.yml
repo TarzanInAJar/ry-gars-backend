@@ -1,0 +1,68 @@
+brand: 'Arturo Fuente'
+name: 'Fuente Fuente OpusX'
+strength: 'Full'
+binder:
+  region: 'Dominican Republic'
+filler:
+  -
+    region: 'Dominican Republic'
+wrappers:
+  -
+    shade: 'Dominican'
+    region: 'Dominican Republic'
+images:
+  - 'http://hehe.com/heh.jpeg'
+sizes:
+  -
+    sizeName: 'Double Corona'
+    ringGauge: 49
+    length: 7.625
+  -
+    sizeName: "Reserva D'Chateau"
+    ringGauge: 48
+    length: 7
+  -
+    sizeName: 'Perfecxion No. 2'
+    ringGauge: 52
+    length: 6.375
+  -
+    sizeName: 'Perfecxion X'
+    ringGauge: 48
+    length: 6.25
+  -
+    sizeName: 'Petit Lancero'
+    ringGauge: 39
+    length: 6.25
+  -
+    sizeName: 'Fuente Fuente'
+    ringGauge: 46
+    length: 5.625
+  -
+    sizeName: 'Super Belicoso'
+    ringGauge: 52
+    length: 5.5
+  -
+    sizeName: 'Perfecxion No. 77 Shark'
+    ringGauge: 52
+    length: 5.5
+  -
+    sizeName: 'Robusto'
+    ringGauge: 50
+    length: 5.25
+  -
+    sizeName: 'Double Robusto'
+    ringGauge: 52
+    length: 5.75
+  -
+    sizeName: 'Perfecxion No. 4 Series X'
+    ringGauge: 43
+    length: 5.1875
+  -
+    sizeName: 'Perfecxion No. 5'
+    ringGauge: 40
+    length: 4.875
+  -
+    sizeName: 'Belicoso XXX'
+    ringGauge: 49
+    length: 4.625
+
