@@ -18,9 +18,10 @@ public interface CigarRepository extends MongoRepository<Cigar, String> {
 
     Page<Cigar> findAllByBrand(Pageable pageable, String brand);
 
+    // TODO anyway to do this and use a collation?
     @ExistsQuery("{ " +
-            "'brand' : ?0" +
-            "'name' : ?1" +
+            "'brand' : { $regex: /^?0$/, $options: 'i' }" +
+            "'name' : { $regex: /^?1$/, $options: 'i' }" +
             "}")
     boolean exists(String brand, String name);
 
