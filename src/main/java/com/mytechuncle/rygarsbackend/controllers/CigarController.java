@@ -38,7 +38,7 @@ public class CigarController {
 
     @GetMapping(path="/search")
     public ResponseEntity<Page<IdName>> searchCigars(Pageable pageable, @RequestParam(name = "query") String query) {
-        Page<IdName> result = repository.findAllByBrandOrSubBrandOrName(query, PageRequest.of(0, 10));
+        Page<IdName> result = repository.findAllByBrandOrTagsOrName(query, PageRequest.of(0, 10));
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 

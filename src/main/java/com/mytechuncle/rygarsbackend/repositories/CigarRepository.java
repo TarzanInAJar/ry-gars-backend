@@ -26,19 +26,22 @@ public interface CigarRepository extends MongoRepository<Cigar, String> {
     boolean exists(String brand, String name);
 
 
-    @Query("{ " +
+    @Query(collation = "{ locale: 'en_US', strength: 1 }",
+            value = "{ " +
             "'brand' : ?0" +
             "'name' : ?1" +
             "}")
     Optional<Cigar> findOne(String brand, String name);
 
-    @Query("{ " +
+    // TODO does specifying a collation do anything/take advantage of indexes when using regex queries?
+    @Query(collation = "{ locale: 'en_US', strength: 1 }",
+            value = "{ " +
             "$or: [" +
             "{'brand' : { $regex: /.*?0.*/, $options: 'i' } }" +
-            //"{'subBrand' : { $regex: /.*?0.*/, $options: 'i' } }" + TODO search on tags
+            "{'tags' : { $regex: /.*?0.*/, $options: 'i' } }" +
             "{'name' : { $regex: /.*?0.*/, $options: 'i' } }" +
             "]}")
-    Page<IdName> findAllByBrandOrSubBrandOrName(String search, Pageable pageable);
+    Page<IdName> findAllByBrandOrTagsOrName(String search, Pageable pageable);
 
     public class IdName {
         private String id;
