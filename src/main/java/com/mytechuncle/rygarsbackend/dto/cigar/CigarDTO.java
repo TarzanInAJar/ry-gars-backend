@@ -1,5 +1,6 @@
 package com.mytechuncle.rygarsbackend.dto.cigar;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.net.URL;
@@ -120,7 +121,8 @@ public class CigarDTO {
         return Objects.hash(brand, tags, name, binder, filler, wrappers, strength, sizes, images);
     }
 
+    @JsonIgnore
     public String getBrandAndName() {
-        return brand + " " + name;
+        return brand + " - " + name;
     }
 }
