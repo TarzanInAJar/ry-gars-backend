@@ -36,6 +36,15 @@ public class CigarController {
         return new ResponseEntity<>(cigar, HttpStatus.OK);
     }
 
+    @GetMapping(path= "/{brand}/{name}", produces = "application/json")
+    public ResponseEntity<CigarDTO> getCigar(@PathVariable(name = "brand") String brand, @PathVariable(name = "name") String name) {
+        CigarDTO cigar = service.getCigar(brand, name);
+        if (cigar == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(cigar, HttpStatus.OK);
+    }
+
     @GetMapping(path="/search")
     public ResponseEntity<Page<IdName>> searchCigars(Pageable pageable, @RequestParam(name = "query") String query) {
         Page<IdName> result = repository.findAllByBrandOrTagsOrName(query, PageRequest.of(0, 10));
